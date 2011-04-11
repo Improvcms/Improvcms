@@ -1,0 +1,151 @@
+@charset "utf-8";
+/*
+	MillionCMS Project
+    
+    Name: Admin Menu Classes CSS
+    Description: This makes the menu's look sexy!
+    Author: Damian Sharpe
+
+    Copyright � 2010 Damian and the MillionCMS Group
+        All Rights Reserved
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/* Home Tab */
+.admin_home {
+	background-image:url(../icons/application_home.png);
+}
+.admin_options {
+	background-image:url(../icons/cog.png);
+}
+.visual_pref {
+	background-image:url(../icons/script_palette.png);
+}
+/* Article and Cat Tab */
+.add_article {
+	background-image:url(../icons/page_add.png);
+}
+.manage_articles {
+	background-image:url(../icons/page_edit.png);
+}
+.article_settings {
+	background-image:url(../icons/page_gear.png);
+}
+.new_cat {
+	background-image:url(../icons/table_add.png);
+}
+.manage_cat {
+	background-image:url(../icons/table_go.png);
+}
+.manage_sections {
+	background-image:url(../icons/table_multiple.png);
+}
+.cat_settings {
+	background-image:url(../icons/table_gear.png);
+}
+.article_trash {
+	background-image:url(../icons/bin.png);
+}
+.front_page_settings {
+	background-image:url(../icons/layout_sidebar.png);
+}
+/* Look and Feel Tab */
+.template_manager {
+	background-image:url(../icons/palette.png);
+}
+.template_editor {
+	background-image:url(../icons/palette_edit.png);
+}
+.look_feel_import_export {
+	background-image:url(../icons/disk.png);
+}
+/* Extention's Tab */
+.ext_manager {
+	background-image:url(../icons/application_view_tile.png);
+}
+.ext_install_uninstall {
+	background-image:url(../icons/application_xp_terminal.png);
+}
+.ext_plugin {
+	background-image:url(../icons/plugin.png);
+}
+.ext_gadget {
+	background-image:url(../icons/plugin.png);
+}
+.ext_bridge {
+	background-image:url(../icons/arrow_switch.png);
+}
+.ext_official {
+	background-image:url(../icons/asterisk_orange.png);
+}
+/* Setting's Tab */
+.general_settings {
+	background-image:url(../icons/brick.png);
+}
+.user_settings {
+	background-image:url(../icons/cog_add.png);
+}
+
+.user_creation {
+	background-image:url(../icons/cup.png);
+}
+.system {
+	background-image:url(../icons/door_in.png);
+}
+.server {
+	background-image:url(../icons/drive.png);
+}
+.backup {
+	background-image:url(../icons/book_addresses.png);
+}
+.admin_logs {
+	background-image:url(../icons/application_view_columns.png);
+}
+.sql_inject {
+	background-image:url(../icons/import.png);
+}
+.mass_mail {
+	background-image:url(../icons/email_add.png);
+}
+/* User's Tab */
+.account_manager {
+	background-image:url(../icons/user.png);
+}
+.add_user {
+	background-image:url(../icons/user_add.png);
+}
+.delete_user {
+	background-image:url(../icons/user_delete.png);
+}
+.usergroups {
+	background-image:url(../icons/group.png);
+}
+/* The Epic Million Manager Tab */
+.menu_m {
+	background-image:url(../icons/bullet_orange.png);
+}
+.files_m {
+	background-image:url(../icons/bullet_green.png);
+}
+.language_m {
+	background-image:url(../icons/bullet_pink.png);
+}
+.backup_m {
+	background-image:url(../icons/bullet_purple.png);
+}
+.cache_m {
+	background-image:url(../icons/bullet_red.png);
+}

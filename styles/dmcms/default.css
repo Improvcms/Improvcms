@@ -1,0 +1,108 @@
+/*
+	MillionCMS Project
+    
+	Name: Default Stylesheet
+	Description: The stylesheet bundled in with a stock install.
+	Last Update: 30 November 2010
+	Author: Malietjie
+
+    Copyright © 2010 MAlietjie and MillionCMS Group
+	All Rights Reserved
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	/*overflow:hidden;*/
+	overflow: auto;
+	overflow-style: marquee-line;
+	white-space: nowrap;
+}
+
+li
+{
+	float:left;
+}
+
+a:link.nav
+{
+	background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+a:active.nav
+{
+	background-color:#465c71;
+}
+
+a:link 
+{
+	text-decoration: none;
+	color: #0000FF;
+	}
+	
+a:visited 
+{
+	text-decoration: none;
+	color: #0000FF;
+
+}
+a:active 
+{
+	text-decoration: none;
+	color: #0000FF;
+}
+img
+{  
+	border-style: none;
+}
+
+body   
+{
+    background: #b6b7bc;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+table.tborder
+{
+	border: 1px #b6b7bc solid;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.90;
+	opacity:0.90;
+}
+.trow
+{
+	border: 1px #b6b7bc solid;
+}
+
+#error {
+	padding: 5px 10px;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	background: #767570;
+	font-size: 12px;
+}

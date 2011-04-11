@@ -1,0 +1,214 @@
+@charset "utf-8";
+/*
+	MillionCMS Project
+    
+    Name: Menu Admin CSS
+    Description: Create's our menu's using multiple files, not CSS3!
+    Author: Damian Sharpe
+
+    Copyright � 2010 Damian and the MillionCMS Group
+        All Rights Reserved
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/* ==================== */
+/*       Menu CSS       */
+/* ==================== */
+
+#million_menu_wrapper {
+	border-style: solid;
+	border-color: #f3f5f8 #f3f5f8 #267fa8 #f3f5f8;
+	border-width: 1px 0 ;
+	width: 100%;
+	float: left;
+	background: #dee2e6;
+	padding: 8px 0 0;
+	background:#e3e8ea url(../images/million_menu_bg.png) repeat-x;
+	min-height: 1px;
+	margin-bottom:25px;
+	
+}
+
+#main_menu {
+	width: 100%;
+	float: left;
+	
+}
+
+#main_menu  ul {
+	margin: 0;
+	padding: 0 11px;
+	float: left;
+}
+
+#main_menu li {
+	float: left;
+	list-style: none;
+	padding: 0 1px 0 0;
+	margin: 0;
+	background:url(../images/main_menu_li.gif) no-repeat right bottom;
+}
+
+#main_menu li.last {
+	background: none;
+	padding: 0;
+}
+
+#main_menu a:link, #main_menu a:visited, #main_menu a:active {
+	display: block;
+	line-height: 33px;
+	float: left;
+	background:url(../images/mm_lk_middle.gif) repeat-x 0 -33px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#main_menu span {
+	display: block;
+	float: left;
+	background:url(../images/mm_lk_left.gif) no-repeat 0 -33px;
+}
+
+#main_menu span span {
+	background:url(../images/mm_lk_right.gif) no-repeat right -33px;
+	padding: 0 13px;
+}
+
+#main_menu a:hover {
+	background-position: 0 -66px;
+}
+
+#main_menu a:hover span {
+	background-position: 0 -66px;
+	cursor: pointer;
+}
+
+#main_menu a:hover span span {
+	background-position: right -66px;
+}
+
+#main_menu a.selected:link,
+#main_menu a.selected:visited,
+#main_menu a.selected:hover,
+#main_menu a.selected:active {
+	text-decoration: none;
+	color: #223138;
+	background-position: 0 0;
+}
+
+#main_menu a.selected:link span,
+#main_menu a.selected:visited span,
+#main_menu a.selected:hover span,
+#main_menu a.selected:active span {
+	background-position: 0 0;
+	cursor: default;
+}
+
+#main_menu a.selected:link span span,
+#main_menu a.selected:visited span span,
+#main_menu a.selected:hover span span,
+#main_menu a.selected:active span span {
+	background-position: right 0;
+}
+
+#sec_menu {
+	background: #319ecf url(../images/sec_menu_bg.gif) repeat-x;
+	width: 100%;
+	float: left;
+}
+
+#sec_menu  ul {
+	margin: 0;
+	padding: 0 0 0 23px;
+	float: left;
+}
+
+#sec_menu li {
+	float: left;
+	list-style: none;
+	margin: 0 19px 0 0;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#sec_menu li ul {
+	position: absolute;
+	top: 41px;
+	right: -3px;
+	background: #319ecf;
+	margin: 0;
+	padding: 0;
+	border-color: #267fa8;
+	border-width: 1px 4px 1px 1px;
+	border-style: solid;
+	padding: 8px;
+	float: left;
+	width: 120px;
+	display: none;
+	
+}
+
+#sec_menu li:hover ul {
+	display: block;
+}
+
+#sec_menu ul ul li {
+	margin: 0;
+	padding: 0;
+	float: right;
+	clear: right;
+	
+	
+	
+}
+
+#sec_menu ul ul a:link,
+#sec_menu ul ul a:visited,
+#sec_menu ul ul a:hover,
+#sec_menu ul ul a:active {
+	line-height: 28px;
+	display: block;
+	float: right;
+	white-space: nowrap;
+	
+	background-position: 0 5px;
+	
+}
+
+#sec_menu a {
+	display: block;
+	float: left;
+	white-space: nowrap;
+	line-height: 41px;
+	color: #fff;
+	padding: 0 0 0 19px;
+	background-position: 0 12px;
+	background-repeat: no-repeat;
+}
+
+#sec_menu li:hover .drop {
+	background-position: right center;
+}
+
+#sec_menu li:hover .drop span {
+	background-position:  0 0;
+}
+
+#sec_menu li:hover .drop span span {
+	background-position: right 12px;
+}

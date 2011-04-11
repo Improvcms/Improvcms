@@ -1,0 +1,189 @@
+@charset "utf-8";
+/*
+	MillionCMS Project
+    
+    Name: Form Admin Style Sheet
+    Description: This makes forms look as nice as the rest of the ACP...
+    Author: Damian Sharpe
+
+    Copyright � 2010 Damian and the MillionCMS Group
+        All Rights Reserved
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option') any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+form {
+	float:left;	
+	display:inline;
+	border:none;
+	width:98%;
+	margin-left:1%;
+	margin-right:1%;
+}
+
+.form_sub_title {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:18px;
+	display:block;
+	margin-bottom:10px;
+	border-bottom: 1px dotted #CCC;
+}
+
+.form_sub_title_nb {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+	text-decoration:underline;
+}
+
+label {
+	float:left;
+	width:20%;
+	font-size:16px;
+	font-family:Century Gothic, Arial, Helvetica, sans-serif;
+}
+
+textarea {
+	background:#f8f8f8;
+	border:1px solid #CCC;
+	padding:5px;
+	width:50%;
+	min-height:50px;
+}
+
+select {
+	background:#f8f8f8;
+	border:1px solid #CCC;
+	padding:5px;
+}
+
+input[type=checkbox] {
+	padding:0px;
+	background:none;
+	border:none;
+	width:25px;
+}
+
+input[type=radio] {
+	padding:0px;
+	background:none;
+	border:none;
+	width:25px;
+}
+
+input[type=image] {	
+	background:#f8f8f8;
+	border:1px solid #CCC;
+	width:16px;
+	vertical-align:middle;
+}
+
+input[type=submit],input[type=reset],input[type=button] {
+	width:150px;
+}
+
+input{	
+	background:#f8f8f8;
+	border:1px solid #CCC;
+	padding:5px;
+}
+	
+
+
+
+
+
+
+
+
+/* Sexy Link's; not Forms */
+a.submit:visited,a.submit:active,a.submit:link,a.add:visited,a.add:active,a.add:link,a.publish:visited,a.publish:active,a.publish:link,a.edit:visited,a.edit:active,a.edit:link,a.delete:visited,a.delete:active,a.delete:link,a.reset:visited,a.reset:active,a.reset:link {
+	width:auto;
+	text-transform:uppercase;
+	font:bold 10px "Lucida Grande", Arial, Helvetica, sans-serif;
+	color:#fff;
+	white-space:nowrap;
+	text-decoration:none;
+	margin:0 2px 0 0;
+	padding:2px 8px;
+}
+
+a.publish {
+	background:#afd2ea;
+	color:#fff;
+}
+
+a.publish:hover {
+	background:#0072bc;
+	color:#fff;
+}
+
+a.edit {
+	background:#949ca1;
+	color:#000;
+}
+
+a.edit:hover {
+	background:#727c82;
+	color:#fff;
+}
+
+a.delete {
+	background:#ffb5b5;
+	color:#fff;
+}
+
+a.delete:hover {
+	background:#d80047;
+	color:#fff;
+}
+
+a.add {
+	background:#99d177;
+	color:#fff;
+}
+
+a.add:hover {
+	background:#00a651;
+	color:#fff;
+}
+
+a.reset {
+	background:#96aabf;
+	color:#fff;
+}
+
+a.reset:hover {
+	background:#6f7f90;
+	color:#fff;
+}
+
+a.submit {
+	background:#12486b;
+	color:#fff;
+}
+
+a.submit:hover {
+	background:#000;
+	color:#fff;
+}
+
+/* Other Button CSS */
+
+.button_float_l {
+	float:left;
+}
+
+.button_float_r {
+	float:right;
+}

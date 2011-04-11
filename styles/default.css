@@ -1,0 +1,120 @@
+/*
+	MillionCMS Project
+    
+	Name: Default Stylesheet
+	Description: The stylesheet bundled in with a stock install.
+	Last Update: 09 October 2010
+	Author: Azareal
+
+    Copyright © 2010 Azareal and MillionCMS Group
+	All Rights Reserved
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	/*overflow:hidden;*/
+	overflow: auto;
+	overflow-style: marquee-line;
+	white-space: nowrap;
+}
+li
+{
+	float:left;
+}
+a:link.nav
+{
+	display:block;
+	width:100px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:darkblue;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+}
+a:visited.nav
+{
+	display:block;
+	width:100px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:darkblue;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+}
+a:hover.nav
+{
+	background-color:blue;
+}
+a:active.nav
+{
+	background-color:blue;
+}
+a:link 
+{
+	text-decoration: none;
+	color: cyan;
+}
+a:visited 
+{
+	text-decoration: none;
+	color: cyan;
+
+}
+a:active 
+{
+	text-decoration: none;
+	color: cyan;
+}
+img
+{  
+	border-style: none;
+}
+body
+{
+	background: darkblue url(../images/background_old.jpg);
+	background-attachment: fixed;
+	color:blue;
+}
+table.tborder
+{
+	border: 1px blue solid;
+	/*background-color: darkblue;*/
+	filter:alpha(opacity=90);
+	-moz-opacity:0.90;
+	opacity:0.90;
+	/*border-collapse: collapse;*/
+}
+.trow
+{
+	border: 1px blue solid;
+}
+
+#error {
+	padding: 5px 10px;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	background: #FFF6BF;
+	font-size: 12px;
+}
+
+#error p {
+	color:#FFF;
+}

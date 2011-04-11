@@ -1,0 +1,104 @@
+@charset "utf-8";
+/*
+	MillionCMS Project
+    
+    Name: Table Style Sheet
+    Description: Help's the tables in our ACP become a lot nicer to look at!
+    Author: Damian Sharpe
+
+    Copyright � 2010 Damian and the MillionCMS Group
+        All Rights Reserved
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option') any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+table {
+	width:100%;
+	border-collapse:collapse;
+}
+
+table thead th {
+	font-weight:700;
+	font-size:15px;
+	border-bottom:1px solid #ddd;
+}
+
+tbody {
+	border-bottom:1px solid #ddd;
+}
+
+tbody tr {
+	background:#fff;
+}
+
+tbody tr.alt-row {
+	background:#f3f3f3;
+}
+
+table td, table th {
+	line-height:1.3em;
+	padding:10px;
+}
+
+table tfoot td .bulk-actions {
+	padding:15px 0 5px;
+}
+
+table tfoot td .bulk-actions select {
+	border:1px solid #ccc;
+	padding:4px;
+}
+
+/*
+
+This code below is debug code, so it is only used if we find a bug with table sytles!
+
+#main_content table {
+	width:100%;
+	border-collapse:collapse;
+}
+
+#main_content table thead th {
+	font-weight:700;
+	font-size:15px;
+	border-bottom:1px solid #ddd;
+}
+
+#main_content tbody {
+	border-bottom:1px solid #ddd;
+}
+
+#main_content tbody tr {
+	background:#fff;
+}
+
+#main_content tbody tr.alt-row {
+	background:#f3f3f3;
+}
+
+#main_content table td,#main-content table th {
+	line-height:1.3em;
+	padding:10px;
+}
+
+#main_content table tfoot td .bulk-actions {
+	padding:15px 0 5px;
+}
+
+#main_content table tfoot td .bulk-actions select {
+	border:1px solid #ccc;
+	padding:4px;
+}
+
+*/
