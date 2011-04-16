@@ -7,7 +7,7 @@ ImprovCMS Project
 
     Author: Kieran D, Gaara
 
-    Copyright © 2010 Gaara, Kieran D and ImprovCMS Software Group
+    Copyright © 2010 Gaara, Kieran D and Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -187,7 +187,7 @@ error_reporting(0);
 			echo "Username: <br /><input type='text' name='username' /><br />";
 			echo "Password: <br /><input type='password' name='password' /><br />";
 			echo "Database: <br /><input type='text' name='database' /><br />";
-			echo "Table Prefix: <br /><input type='text' name='table_prefix' value='mcms_' />
+			echo "Table Prefix: <br /><input type='text' name='table_prefix' value='imp_' />
 			</td></tr></table><br /><br />";
 			
 			//Next Button
