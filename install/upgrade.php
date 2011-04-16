@@ -121,12 +121,13 @@ error_reporting(0);
 		{
 			$next = "update";
 			require("../inc/core.class.php");
+			define("IN_MILLION","1");
 			global $imp;
 			
 			// Select version
 			echo "Before we can continue, we need to select the version you are currently running.";
 			echo "<br />";
-			echo "You are currently running v"; echo $imp->fversion; echo ". The latest version is:"; echo $version; echo".";
+			echo "You are currently running v"; echo $imp->fversion; echo ". The latest version is:"; echo $imp->version; echo".";
 			
 			
 		}
