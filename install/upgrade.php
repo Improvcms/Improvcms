@@ -121,8 +121,8 @@ error_reporting(0);
 		{
 			$next = "update";
 			define("IN_MILLION","1");
-			require("../inc/core.class.php");
-			$imp = new core;
+			require("../global.php");
+			// $imp = new core;
 			global $imp;
 			
 			// Select version
