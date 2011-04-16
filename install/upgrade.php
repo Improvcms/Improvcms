@@ -111,7 +111,7 @@ error_reporting(0);
 			
 			// Next Button
 			echo "<br />Click 'Next' to select the version you are upgrading from.</p><br />
-			<form method='POST' action='./index.php'>
+			<form method='POST' action='./upgrade.php'>
 			<input type='hidden' name='action' value='{$next}' />
 			<input type='submit' value='Next' />
 			</form>";
@@ -156,6 +156,11 @@ error_reporting(0);
 			$lock = @fopen('./lock', 'w');
 			$written = @fwrite($lock, 'locked');
 			@fclose($lock);
+		}
+		
+		function locked()
+		{
+			echo "The upgrader cannot continue until you have deleted the lock file from this directory.";
 		}
 		?>
 		
