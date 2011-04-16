@@ -120,7 +120,7 @@ error_reporting(0);
 		function version()
 		{
 			$next = "update";
-			define("IM_MILLION","1");
+			define("IN_MILLION","1");
 			require("../inc/core.class.php");
 			global $imp;
 			
