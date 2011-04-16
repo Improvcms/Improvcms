@@ -1,13 +1,13 @@
 <?php
 /*
-MillionCMS Project
+ImprovCMS Project
     
     Name: Core Class
     Description: Where quite afew core functions are performed.
 	Last Update: 02 November 2010
     Author: Azareal
 
-    Copyright © 2010 Azareal and MillionCMS Group
+    Copyright © 2010 Azareal and Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -74,14 +74,14 @@ class core
 		$loop = $db->loop2array($query);
 		$content .= "<?php
 /*
-MillionCMS Project
+ImprovCMS Project
 		
 	Name: Settings Cache
 	Description: This is a cache of all of the current settings.
 	Last Update: 02 November 2010
 	Author: Azareal
 
-	Copyright © 2010 Azareal and MillionCMS Group
+	Copyright © 2010 Azareal and Improv Software Group
 	All Rights Reserved
 
 	This program is free software: you can redistribute it and/or modify
@@ -126,6 +126,26 @@ MillionCMS Project
 		unset($this->user['password']);
 		$usergroup = $db->fetch_array($ugroup);
 		$this->usergroup = $usergroup;
+	}
+	
+	// Generates an error message when something goes wrong. BETA
+	function imp_error($errcode)
+	{
+		if($errcode = 40)
+		{
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>ImprovCMS Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, something went wrong when trying to perform the requested action.<br /><br />Error Code 40: This software has not been installed, browse to the /install/ directory to begin the installation</td>
+				</tr>
+				</table>
+			</div>";
+			echo $html;
+		}
 	}
 }
 ?>
