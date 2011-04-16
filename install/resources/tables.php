@@ -222,7 +222,7 @@ VALUES
 $insert6 = "INSERT INTO {$prefix}templates (name, content)
 VALUES
 ('footer','<div id=\"footer\" align=\"center\">
-Powered by <a href=\"http://millioncms.com\">MillionCMS</a>
+Powered by <a href=\"http://improvcms.com\">ImprovCMS</a><br />Copyright &copy; 2011 Improv Software Group
 </div>
 <div id=\"show_toolbox\" style=\"display: none;\">
 <iframe src=\"{\$mcms->settings.siteurl}/toolbox.php?mode=jquery\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
