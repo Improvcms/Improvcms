@@ -22,9 +22,9 @@ ImprovCMS Project
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 */
-require_once("./resources/functions_upgrade.php");
+
+// require_once("./resources/functions_upgrade.php");
 error_reporting(0);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -105,6 +105,68 @@ error_reporting(0);
 		{
 			$next = "version";
 			
-			//
-
-?>
+			// Welcome text
+			echo "Welcome to the Upgrade System for ImprovCMS! This script will take you through the process of updating your version of ImprovCMS to the version you have uploaded to the server<br /><br />";
+			echo "<b>Please make sure you have taken backups and disabled all plugins and gadgets before upgrading! You never know what might happen when upgrading.</b>";
+			
+			// Next Button
+			echo "<br />Click 'Next' to select the version you are upgrading from.</p><br />
+			<form method='POST' action='./index.php'>
+			<input type='hidden' name='action' value='{$next}' />
+			<input type='submit' value='Next' />
+			</form>";
+		}
+		
+		function version()
+		{
+			$next = "update";
+			require("../inc/core.class.php");
+			global $imp;
+			
+			// Select version
+			echo "Before we can continue, we need to select the version you are currently running.";
+			echo "<br />";
+			echo "You are currently running v"; echo $imp->fversion; echo ". The latest version is:"; echo $version; echo".";
+			
+			
+		}
+		
+		function update()
+		{
+			$next = "admin_update";
+		}
+		
+		function admin_update()
+		{
+			$next = "settings_update";
+		}
+		
+		function settings_update()
+		{
+			$next = "style_update";
+		}
+		
+		function style_update()
+		{
+			$next = "finish";
+		}
+		
+		function finish()
+		{
+			$lock = @fopen('./lock', 'w');
+			$written = @fwrite($lock, 'locked');
+			@fclose($lock);
+		}
+		?>
+		
+	</div>		
+	 <div id="footer">
+		&copy; <?php 
+		$copyYear = 2010; 
+		$curYear = date('Y'); 
+		echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : ''); ?>
+		Powered by <a href="http://improvcms.com/forums">ImprovCMS</a> Alpha 3 Dev
+	</div>		 
+</div>
+</body>
+</html>
