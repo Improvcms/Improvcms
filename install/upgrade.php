@@ -127,9 +127,7 @@ error_reporting(0);
 			// Select version
 			echo "Before we can continue, we need to select the version you are currently running.";
 			echo "<br />";
-			echo "You are currently running v"; echo $imp->fversion; echo ". The latest version is:"; echo $imp->version; echo".";
-			
-			
+			echo "You are currently running version: {$imp->fversion}. The latest version is: {$imp->version}.";
 		}
 		
 		function update()
