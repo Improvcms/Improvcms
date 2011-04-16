@@ -101,7 +101,7 @@ error_reporting(0);
 			break;
 		}
 		
-		function overview();
+		function overview()
 		{
 			$next = "version";
 			
