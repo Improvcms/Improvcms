@@ -24,7 +24,6 @@ ImprovCMS Project
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// require_once("./resources/functions_upgrade.php");
 error_reporting(0);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -121,26 +120,22 @@ error_reporting(0);
 		{
 			$next = "update";
 			define("IN_MILLION","1");
-			require("../global.php");
-			$imp = $mcms;
-			require("../inc/{$config['db']['type']}/database.class.php");
-			$imp = new core;
-			$db = new database;
-			global $imp, $db;
+			require("../inc/class_version.php");
+			$v = new version;
 			
 			// Select version
 			echo "Before we can continue, we need to check that you actually need to upgrade.<br />";
 			
-			if($imp->fversion > $imp->latest_version)
+			if($v->current > $v->latest)
 			{
 				error("You don't need to run the upgrade because you are running the latest version");
 			}
-			elseif($imp->fversion < $imp->latest_version)
+			elseif($v->current < $v->latest)
 			{
 				echo "You are running an older version and need to upgrade. Please select the version you are upgrading from.";
 			}
 			else {
-				error("The database class could not be instantiated. Please contact support.");
+				error("The upgrade class could not be instantiated. Please contact support.");
 			}
 		}
 		
