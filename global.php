@@ -67,10 +67,10 @@ $db = new database($config);
 // Generate the core
 require_once(ROOT."/inc/core.class.php");
 // Wake up our pixies.
-$mcms = new core;
+$imp = new core;
 unset($config);
 // Setup siteurl
-$siteurl = $mcms->settings['siteurl'];
+$siteurl = $imp->settings['siteurl'];
 // Class for controlling permissions
 require_once(ROOT."/inc/permissions.class.php");
 // Check the user's session
@@ -82,7 +82,7 @@ else
 {
 	check_adminsession();
 }
-$gid = $mcms->user['gid'];
+$gid = $imp->user['gid'];
 // Start up the class
 $perms = new permissions($gid);
 // Get the class for dealing with templates
@@ -104,17 +104,17 @@ $smarty->template_dir = ROOT.'/cache';
 $smarty->registerResource("db",array("db_get_template","db_get_timestamp","db_get_secure","db_get_trusted"));
 // Start up template caching
 $smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
-// Give smarty access to $mcms variable.
-$smarty->assign('mcms',$mcms);
+// Give smarty access to $imp variable.
+$smarty->assign('imp',$imp);
 // Shorthand way of fetching username.
-$smarty->assign('username',$mcms->user['username']);
+$smarty->assign('username',$imp->user['username']);
 // Quick way to check if someones an administrator.
 $is_admin = $perms->check_perms("can_access_admincp");
 $smarty->assign('is_admin',$is_admin);
 // Now to get global to parse the global templates.
 $header = $templates->fetch("header");
 $header = addslashes($header);
-if($mcms->user['uid']=='0')
+if($imp->user['uid']=='0')
 {
 	$header_guest = $templates->fetch("header_guest");
 	$smarty->assign('header_guest',$header_guest);
@@ -125,21 +125,21 @@ elseif($perms->check_perms("can_access_admincp"))
 	$smarty->assign('header_admin',$header_admin);
 	$header_member = $templates->fetch("header_member");
 	$smarty->assign('header_member',$header_member);
-	$db->query("UPDATE ".TABLE_PREFIX."users SET ipaddress='{$_SERVER[REMOTE_ADDR]}' WHERE uid='{$mcms->user[uid]}'");
-	$db->query("UPDATE ".TABLE_PREFIX."users SET lastactive='{$timenow}' WHERE uid='{$mcms->user[uid]}'");
+	$db->query("UPDATE ".TABLE_PREFIX."users SET ipaddress='{$_SERVER[REMOTE_ADDR]}' WHERE uid='{$imp->user[uid]}'");
+	$db->query("UPDATE ".TABLE_PREFIX."users SET lastactive='{$timenow}' WHERE uid='{$imp->user[uid]}'");
 }
 else
 {
 	$header_member = $templates->fetch("header_member");
 	$smarty->assign('header_member',$header_member);
-	$db->query("UPDATE ".TABLE_PREFIX."users SET ipaddress='{$_SERVER[REMOTE_ADDR]}' WHERE uid='{$mcms->user[uid]}'");
-	$db->query("UPDATE ".TABLE_PREFIX."users SET lastactive='{$timenow}' WHERE uid='{$mcms->user[uid]}'");
+	$db->query("UPDATE ".TABLE_PREFIX."users SET ipaddress='{$_SERVER[REMOTE_ADDR]}' WHERE uid='{$imp->user[uid]}'");
+	$db->query("UPDATE ".TABLE_PREFIX."users SET lastactive='{$timenow}' WHERE uid='{$imp->user[uid]}'");
 }
-$username = $mcms->user['username'];
-$avatar = $mcms->user['avatar'];
+$username = $imp->user['username'];
+$avatar = $imp->user['avatar'];
 if(empty($avatar))
 {
-	$gname = getgroup($mcms->user['uid']);
+	$gname = getgroup($imp->user['uid']);
 	if(is_readable("./images/groups/".strtolower($group['name']).".png"))
 	{
 		$strgroup = strtolower($gname['name']);
@@ -155,7 +155,7 @@ if(empty($avatar))
 $smarty->assign('avatar',$avatar);
 //eval("\$header = \"$header\";");
 $header = stripslashes($header);
-$header = str_replace($mcms->config['db']['uname'],"Guest",$header);
+$header = str_replace($imp->config['db']['uname'],"Guest",$header);
 unset($username);
 $headerincludes = $templates->fetch("header_includes");
 $headerincludes = addslashes($headerincludes);
