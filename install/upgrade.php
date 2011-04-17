@@ -124,18 +124,28 @@ error_reporting(0);
 			$v = new version;
 			
 			// Select version
-			echo "Before we can continue, we need to check that you actually need to upgrade.<br />";
+			echo "Before we can continue, we need to check that you actually need to upgrade.<br /><br />";
 			
 			if($v->current > $v->latest)
 			{
-				error("You don't need to run the upgrade because you are running the latest version");
+				echo "
+				<table border='0' bgcolor='yellow'>
+					<tr>
+						<td><span style='color: red;'>You don't need to run the upgrade because you are running the latest version</span></td>
+					</tr>
+				</table>";
 			}
 			elseif($v->current < $v->latest)
 			{
 				echo "You are running an older version and need to upgrade. Please select the version you are upgrading from.";
 			}
 			else {
-				error("The upgrade class could not be instantiated. Please contact support.");
+				echo "
+				<table border='0' bgcolor='yellow'>
+					<tr>
+						<td><span style='color: red;'>The upgrade class could not be instantiated. Please contact support.</span></td>
+					</tr>
+				</table>";
 			}
 		}
 		
