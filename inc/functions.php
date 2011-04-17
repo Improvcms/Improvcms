@@ -78,12 +78,12 @@ function inline_error($message)
 // Check the user's session.
 function check_session()
 {
-	global $db, $mcms;
+	global $db, $imp;
 	$ruser['uid'] = 0;
 	$ruser['gid'] = 1;
 	$ruser['username'] = 'Guest';
-	$mcmsuid = $db->sanitise($_COOKIE['mcmsuid']);
-	$user = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$mcmsuid}'");
+	$impuid = $db->sanitise($_COOKIE['mcmsuid']);
+	$user = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$impuid}'");
 	$millionsession = $db->sanitise($_COOKIE['millionsession']);
 	$session = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE session='{$millionsession}'");
 	$count = $db->num($session);
@@ -96,18 +96,18 @@ function check_session()
 			$ruser = $muser;
 		}
 	}
-	$mcms->assign_user($ruser);
+	$imp->assign_user($ruser);
 }
 
 // Check the admin user's session.
 function check_adminsession()
 {
-	global $db, $mcms;
+	global $db, $imp;
 	$ruser['uid'] = 0;
 	$ruser['gid'] = 1;
 	$ruser['username'] = 'Guest';
-	$mcmsuid = $db->sanitise($_COOKIE['mcmsuid']);
-	$user = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$mcmsuid}'");
+	$impuid = $db->sanitise($_COOKIE['mcmsuid']);
+	$user = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$impuid}'");
 	$millionsession = $db->sanitise($_COOKIE['madminsession']);
 	$session = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE adminsession='{$millionsession}'");
 	$count = $db->num($session);
@@ -120,7 +120,7 @@ function check_adminsession()
 			$ruser = $muser;
 		}
 	}
-	$mcms->assign_user($ruser);
+	$imp->assign_user($ruser);
 }
 
 // Get a username from the uid with proper formatting.
@@ -445,10 +445,10 @@ function getgroup($uid)
 // Update the user's current location.
 function update_location($string)
 {
-	global $mcms;
-	if(!empty($mcms->user['uid']))
+	global $imp;
+	if(!empty($imp->user['uid']))
 	{
-		$db->query("UPDATE ".TABLE_PREFIX."users SET location='{$string}' WHERE uid='{$mcms->user['uid']}'");
+		$db->query("UPDATE ".TABLE_PREFIX."users SET location='{$string}' WHERE uid='{$imp->user['uid']}'");
 	}
 }
 
@@ -468,8 +468,8 @@ function confirm_user($uid)
 // Fetch cached data
 function get_cache($cache)
 {
-	global $mcms;
-	$cache = $mcms->cache[$cache];
+	global $imp;
+	$cache = $imp->cache[$cache];
 	return $cache;
 }
 function getuid($username)

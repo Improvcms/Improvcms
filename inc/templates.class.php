@@ -53,8 +53,8 @@ class templates
 		// Only run this in AdminCP.
 		if(defined("IN_ADMIN"))
 		{
-			global $mcms;
-			if(empty($mcms->user['admin_style']))
+			global $imp;
+			if(empty($imp->user['admin_style']))
 			{
 				$is_default = $db->query("SELECT setid FROM ".TABLE_PREFIX."admin_styles WHERE is_default='1' LIMIT 1");
 				$isdresult = $db->fetch_array($is_default);
@@ -67,7 +67,7 @@ class templates
 				$isdresult = $db->fetch_array($is_default);
 				$defaulttemp = $isdresult['setid'];
 				$atemplates2 = $db->query("SELECT * FROM ".TABLE_PREFIX."admin_templates WHERE templateset='{$defaulttemp}'");
-				$atemplates = $db->query("SELECT * FROM ".TABLE_PREFIX."admin_templates WHERE templateset='{$mcms->user['admin_style']}'");
+				$atemplates = $db->query("SELECT * FROM ".TABLE_PREFIX."admin_templates WHERE templateset='{$imp->user['admin_style']}'");
 			}
 			// Change the array into something that is loopable.
 			$aresult = $db->loop2array($atemplates);
@@ -125,7 +125,7 @@ class templates
 	}
 	function eval2($template)
 	{
-		global $mcms;
+		global $imp;
 		$template = addslashes($template);
 		eval("\$template = \"$template\";");
 		return $template;

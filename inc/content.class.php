@@ -39,7 +39,7 @@ class content
 	// Get the needed page.
 	function __construct($title)
 	{
-		global $db, $perms, $mcms, $gadgets, $loc;
+		global $db, $perms, $imp, $gadgets, $loc;
 		if($title=='index')
 		{
 			if($loc=='view.php')

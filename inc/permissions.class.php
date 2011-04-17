@@ -66,12 +66,12 @@ class permissions
 	}
 	function check_perms($needed)
 	{
-		global $mcms;
+		global $imp;
 		if($this->perms[$needed]==1)
 		{
 			return true;
 		}
-		elseif($this->super_admin($mcms->user['uid']))
+		elseif($this->super_admin($imp->user['uid']))
 		{
 			return true;
 		}
@@ -122,13 +122,13 @@ class permissions
 	}
 	function page_check($access,$pid)
 	{
-		global $db, $mcms;
+		global $db, $imp;
 		$query = $db->query("SELECT author FROM ".TABLE_PREFIX."pages WHERE pid='{$pid}'");
 		$page = $db->fetch_array($query);
 		$author = $page['author'];
 		if($access=='edit')
 		{
-			if($this->perms["can_edit_own_pages"]=='1' && $author==$mcms->user['uid'])
+			if($this->perms["can_edit_own_pages"]=='1' && $author==$imp->user['uid'])
 			{
 				return true;
 			}
@@ -150,7 +150,7 @@ class permissions
 		}
 		elseif($access=='delete')
 		{
-			if($this->perms["can_delete_own_pages"]=='1' && $author==$mcms->user['uid'])
+			if($this->perms["can_delete_own_pages"]=='1' && $author==$imp->user['uid'])
 			{
 				return true;
 			}
@@ -318,8 +318,8 @@ class permissions
 	// This is to check if a user is the super administrator.
 	function super_admin($uid)
 	{
-		global $mcms, $db;
-		if($uid==$mcms->config['super_admins'])
+		global $imp, $db;
+		if($uid==$imp->config['super_admins'])
 		{
 			return true;
 		}
@@ -338,8 +338,8 @@ class permissions
 	}
 	function founder($uid)
 	{
-		global $mcms;
-		if($uid==$mcms->config['super_admins'])
+		global $imp;
+		if($uid==$imp->config['super_admins'])
 		{
 			return true;
 		}

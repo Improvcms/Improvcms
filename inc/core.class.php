@@ -130,10 +130,11 @@ ImprovCMS Project
 	}
 	
 	// Generates an error message when something goes wrong. BETA
-	function imp_error($errcode)
+	function int_error($errcode)
 	{
-		if($errcode = 40)
+		switch($errcode)
 		{
+			case 40:
 			$html = "
 			<div align='center'>
 				<table border='1'>
@@ -146,6 +147,19 @@ ImprovCMS Project
 				</table>
 			</div>";
 			echo $html;
+			
+			case 41:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>ImprovCMS Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, something went wrong when trying to perform the requested action.<br /><br />Error Code 41: Your files are newer than the installed version, please run the upgrader.</td>
+				</tr>
+				</table>
+			</div>";			
 		}
 	}
 }

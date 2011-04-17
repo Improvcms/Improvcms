@@ -35,7 +35,7 @@ class articles
 	public $add = 2;
 	function generate_comments($input,$type)
 	{
-		global $db, $perms, $mcms;
+		global $db, $perms, $imp;
 		// Initial query to start things off.
 		$qtest = $db->query("SELECT cid FROM ".TABLE_PREFIX."comments WHERE pid='{$input}'");
 		// Fetch the number of comments.
@@ -144,8 +144,8 @@ class articles
 				if(!empty($get_avatar))
 				{
 					$info = getimagesize("{$get_avatar}");
-					$maxheight = intval($mcms->settings['avatar_maxheight']);
-					$maxwidth = intval($mcms->settings['avatar_maxwidth']);
+					$maxheight = intval($imp->settings['avatar_maxheight']);
+					$maxwidth = intval($imp->settings['avatar_maxwidth']);
 					if(empty($maxheight) || empty($maxwidth))
 					{
 						$maxheight = 500;
@@ -167,7 +167,7 @@ class articles
 					$editbutton = "<a href=\"#\" onclick='editcomment(\"{$row['cid']}\",\"{$loc}\");return false' value='Edit'>
 					<img src='./images/buttons/edit.png' width='38' height='21' alt='Edit' /></a>";
 				}
-				if($perms->super_admin($mcms->user['uid']) || $perms->check_perms("can_delete_comments"))
+				if($perms->super_admin($imp->user['uid']) || $perms->check_perms("can_delete_comments"))
 				{
 					$deletebutton = "<form method='post' action='{$_SERVER['PHP_SELF']}?title={$title}'>
 									 <!--<input type='submit' onClick='javascript:return confirm(\"Are you sure you want to permanently delete this comment?\")' value='Delete'>-->
@@ -249,7 +249,7 @@ class articles
 	}
 	function add_comment($pid,$content)
 	{
-		global $db, $perms, $mcms;
+		global $db, $perms, $imp;
 		if(empty($content))
 		{
 			return false;
@@ -260,7 +260,7 @@ class articles
 		}
 		$content = $db->sanitise($content);
 		$time = time();
-		$author = $mcms->user['uid'];
+		$author = $imp->user['uid'];
 		$query = $db->query("INSERT INTO ".TABLE_PREFIX."comments (pid,time,content,author) 
 				VALUES ('{$pid}','{$time}','{$content}','{$author}') ");
 		if($query)
@@ -304,12 +304,12 @@ class articles
 	}
 	function delete_comment($cid)
 	{
-		global $db, $perms, $mcms;
+		global $db, $perms, $imp;
 		if(empty($cid))
 		{
 			return false;
 		}
-		if(!$perms->super_admin($mcms->user['uid']) && !$perms->check_perms("can_delete_comments"))
+		if(!$perms->super_admin($imp->user['uid']) && !$perms->check_perms("can_delete_comments"))
 		{
 			return false;
 		}
@@ -341,7 +341,7 @@ class articles
 	// Another content type, this time it's a pagelist.
 	function generate_pagelist($exc = 0, $cutoff = 250)
 	{
-		global $db, $mcms; // Global the database class and core class so we can use them.
+		global $db, $imp; // Global the database class and core class so we can use them.
 		// Check if any statuses are being excluded.
 		if($exc==0) // If it's 0 then, nothing is being excluded.
 		{
