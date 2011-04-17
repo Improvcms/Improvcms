@@ -36,6 +36,6 @@ class version
 	}
 	function current()
 	{
-		$current = // add in the code to find out current version here.
+		$current = "Alpa 3 Development";
 	}
 }
