@@ -1,13 +1,13 @@
 <?php
 /*
-MillionCMS Project
+ImprovCMS Project
     
     Name: Database Class
     Description: A class that deals with the day to day database queries.
 
     Author: Azareal
 
-    Copyright © 2010 Azareal and MillionCMS Group
+    Copyright © 2010 Azareal and Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -61,7 +61,7 @@ class database
 	// A new update method to simplify the more complicated one.
 	function new_update($table,$set,$where = null,$pre = null)
 	{
-		global $loc, $mcms;
+		global $loc, $imp;
 		$explode = explode('=',$set,2);
 		if($where!=null)
 		{
@@ -86,7 +86,7 @@ class database
 				$detail['record'] = $explode2['1'];
 				$details = serialize($detail);
 				$time = time();
-				$this->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','{$loc}','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','{$table}','{$details}') ");
+				$this->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','{$loc}','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','{$table}','{$details}') ");
 				unset($detail);
 			}
 			$query = $this->query("UPDATE ".TABLE_PREFIX."{$table} SET {$explode['0']}='{$explode['1']}' WHERE {$explode2['0']}='{$explode2['1']}'");
