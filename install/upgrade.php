@@ -121,7 +121,7 @@ error_reporting(0);
 		{
 			$next = "update";
 			define("IN_MILLION","1");
-			require("../global.php");
+			// require("../global.php");
 			$imp = new core;
 			$db = new database;
 			global $imp, $db;
