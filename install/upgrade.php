@@ -121,7 +121,7 @@ error_reporting(0);
 		{
 			$next = "update";
 			define("IN_MILLION","1");
-			// require("../global.php");
+			require("../global.php");
 			$imp = new core;
 			$db = new database;
 			global $imp, $db;
@@ -136,6 +136,9 @@ error_reporting(0);
 			elseif($imp->fversion < $imp->latest_version)
 			{
 				echo "You are running an older version and need to upgrade. Please select the version you are upgrading from.";
+			}
+			else {
+				error("The database class could not be instantiated. Please contact support.");
 			}
 		}
 		
