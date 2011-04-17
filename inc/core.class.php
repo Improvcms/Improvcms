@@ -40,6 +40,7 @@ class core
 	public $config;
 	public $version = "003";
 	public $fversion = "Alpha 3 Dev";
+	public $latest_version = "Alpha 3 Dev";
 	// Constructor which starts core up.
 	function __construct()
 	{
