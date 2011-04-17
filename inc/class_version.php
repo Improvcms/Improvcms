@@ -26,6 +26,10 @@ ImprovCMS Project
 
 class version
 {
+	public $latest;
+	public $code;
+	public $current;
+	
 	function latest()
 	{
 		$latest = "Alpha 3 Development";
