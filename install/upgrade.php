@@ -122,6 +122,7 @@ error_reporting(0);
 			$next = "update";
 			define("IN_MILLION","1");
 			require("../global.php");
+			$imp = $mcms;
 			require("../inc/{$config['db']['type']}/database.class.php");
 			$imp = new core;
 			$db = new database;
