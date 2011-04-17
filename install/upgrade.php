@@ -122,13 +122,21 @@ error_reporting(0);
 			$next = "update";
 			define("IN_MILLION","1");
 			require("../global.php");
-			// $imp = new core;
-			global $imp;
+			$imp = new core;
+			$db = new database;
+			global $imp, $db;
 			
 			// Select version
-			echo "Before we can continue, we need to select the version you are currently running.";
-			echo "<br />";
-			echo "You are currently running version: {$imp->fversion}. The latest version is: {$imp->version}.";
+			echo "Before we can continue, we need to check that you actually need to upgrade.<br />";
+			
+			if($imp->fversion > $imp->latest_version)
+			{
+				error("You don't need to run the upgrade because you are running the latest version");
+			}
+			elseif($imp->fversion < $imp->latest_version)
+			{
+				echo "You are running an older version and need to upgrade. Please select the version you are upgrading from.";
+			}
 		}
 		
 		function update()
