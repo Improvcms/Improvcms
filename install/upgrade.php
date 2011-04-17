@@ -23,7 +23,8 @@ ImprovCMS Project
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+require("../inc/class_version.php");
+$v = new version;
 error_reporting(0);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -119,11 +120,8 @@ error_reporting(0);
 		function version()
 		{
 			$next = "update";
-			define("IN_MILLION","1");
-			require("../inc/class_version.php");
-			$v = new version;
+			global $v;
 			
-			// Select version
 			echo "Before we can continue, we need to check that you actually need to upgrade.<br /><br />";
 			
 			if($v->current > $v->latest)
