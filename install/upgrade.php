@@ -129,19 +129,31 @@ error_reporting(0);
 				echo "
 				<table border='0' bgcolor='yellow'>
 					<tr>
-						<td><span style='color: red;'>You don't need to run the upgrade because you are running the latest version</span></td>
+						<td><span style='color: red;font-weight: bold;'>You don't need to run the upgrade because you are running the latest version</span></td>
 					</tr>
 				</table>";
 			}
 			elseif($v->current < $v->latest)
 			{
-				echo "You are running an older version and need to upgrade. Please select the version you are upgrading from.";
+				echo "
+				You are running an older version and need to upgrade. Please select the version you are upgrading from.<br /><br />
+				
+				<select name='sel_v'>
+					<option value='001'>Alpha 1</option>
+					<option value='002'>Alpha 2</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;
+				<form method='POST' action='./upgrade.php'>
+				<input type='hidden' name='action' value='{$next}' />
+				<input type='submit' value='Next' />
+				</form>
+				";
 			}
 			else {
 				echo "
 				<table border='0' bgcolor='yellow'>
 					<tr>
-						<td><span style='color: red;'>The upgrade class could not be instantiated. Please contact support.</span></td>
+						<td><span style='color: red;font-weight: bold;'>The conditional checks are not being checked if you see this error..</span></td>
 					</tr>
 				</table>";
 			}
