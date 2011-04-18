@@ -124,7 +124,7 @@ error_reporting(0);
 			
 			echo "Before we can continue, we need to check that you actually need to upgrade.<br /><br />";
 			
-			if($v->current > $v->latest)
+			if($v->cc > $v->lc)
 			{
 				echo "
 				<table border='0' bgcolor='yellow'>
@@ -133,7 +133,7 @@ error_reporting(0);
 					</tr>
 				</table>";
 			}
-			elseif($v->current < $v->latest)
+			elseif($v->cc < $v->lc)
 			{
 				echo "
 				You are running an older version and need to upgrade. Please select the version you are upgrading from.<br /><br />
