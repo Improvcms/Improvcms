@@ -31,20 +31,11 @@ class version
 	public $fcurrent;
 	public $cc;
 	
-	function flatest()
+	function data()
 	{
 		$latest = "Alpha 3 Development";
-	}
-	function lc()
-	{
 		$lc = "003";
-	}
-	function fcurrent()
-	{
 		$current = "Alpa 3 Development";
-	}
-	function cc()
-	{
 		$cc = "003";
 	}
 }
