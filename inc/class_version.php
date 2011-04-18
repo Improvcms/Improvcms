@@ -26,20 +26,25 @@ ImprovCMS Project
 
 class version
 {
-	public $latest;
-	public $code;
-	public $current;
+	public $flatest;
+	public $lc;
+	public $fcurrent;
+	public $cc;
 	
-	function latest()
+	function flatest()
 	{
 		$latest = "Alpha 3 Development";
 	}
-	function code()
+	function lc()
 	{
-		$code = "003";
+		$lc = "003";
 	}
-	function current()
+	function fcurrent()
 	{
 		$current = "Alpa 3 Development";
+	}
+	function cc()
+	{
+		$cc = "003";
 	}
 }
