@@ -797,7 +797,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		function locked()
 		{
 			echo "<table border='0'><tr><td><img src='./images/lock.png'></td><td>";
-			error("The Installer is Locked and therefore cannot continue. Please remove the 'lock' file to continue and refresh.");
+			error("The Installer is currently locked to prevent unauthorised reinstalls of this software. Delete the \"lock\" file in this install directory, then refresh this page.");
 			echo "If this problem continues please feel free to make a support request over at our 
 			<a href='http://improvcms.com/forums'>Support Forums</a>.</td></tr></table>";
 		}
