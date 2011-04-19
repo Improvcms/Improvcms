@@ -62,7 +62,7 @@ if(empty($rcontent))
 	// Pixies give a value to this variable.
 	$rcontent = '<table border="1" width="100%" class="tborder" cellspacing="0">
 	<tr class="tcat"><th>'.$pixientitle.'<div id="socialbuttons"style="float:right;">
-<iframe src="http://www.facebook.com/plugins/like.php?href='.urlencode($mcms->settings['siteurl'].'/index.php').'&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=recommend&amp;font=tahoma&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true">
+<iframe src="http://www.facebook.com/plugins/like.php?href='.urlencode($imp->settings['siteurl'].'/index.php').'&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=recommend&amp;font=tahoma&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true">
 			</iframe><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
 			<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div></th></tr>
 	<tr class="trow"><td>'.$pixiecontent.'</td></tr></table>';

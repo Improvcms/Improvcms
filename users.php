@@ -48,7 +48,7 @@ if ($_GET['action']=='delete_user')
 	if(!empty($_GET['uid']))
 	{
 		$uid = $db->sanitise($_GET['uid']);
-		if(confirm_user($uid) && !$perms->super_admin($uid) && !$perms->cross_check("can_access_admincp",$uid) && $perms->level_check($mcms->user['uid'],$uid))
+		if(confirm_user($uid) && !$perms->super_admin($uid) && !$perms->cross_check("can_access_admincp",$uid) && $perms->level_check($imp->user['uid'],$uid))
 		{
 			$query = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$uid}'");
 			$backup = $db->fetch_array($query);
@@ -58,7 +58,7 @@ if ($_GET['action']=='delete_user')
 			$detail['post'] = null;
 			$details = serialize($detail);
 			$time = time();
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','delete','users','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','delete','users','{$details}') ");
 			redirect('./users.php?action=done');
 		}
 	}

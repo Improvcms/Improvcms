@@ -32,7 +32,7 @@ if(!defined("IN_MILLION"))
 // To parse messages and similair.
 function parser($settings,$message)
 {
-	global $mcms;
+	global $imp;
 	// Check if HTML is allowed.
 	if ($settings['allowhtml']!=1)
 	{
@@ -77,7 +77,7 @@ function parser($settings,$message)
 		// Preformatted stuff
 		$message = preg_replace("#\[pre\](.*?)\[\/pre\]#si","<pre>$1</pre>",$message);
 		// The You Tag
-		$message = str_replace("[you/]","{$mcms->user['username']}",$message);
+		$message = str_replace("[you/]","{$imp->user['username']}",$message);
 		// Bidrectional Override
 		$message = preg_replace("#\[dir=(.*?)\](.*?)\[\/dir\]#si","<bdo dir='$1'>$2</bdo>",$message);
 		// Possible Spoiler

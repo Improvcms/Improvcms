@@ -39,7 +39,7 @@ if($_GET['action'] == 'success')
 	You submitted the following:<br />
 	Email: {$emailsent}
 	Message: {$mess}";
-	$to = $mcms->settings['email'];
+	$to = $imp->settings['email'];
 	$message = "
 	Hello.
 	
@@ -49,9 +49,9 @@ if($_GET['action'] == 'success')
 	{$mess}
 
 	All the best,
-	{$mcms->settings['site_name']} Mailer";
-	$subject = "Contact Us Form - {$mcms->settings['site_name']}";
-	$header_from .= "From: {$mcms->settings['site_name']} Mailer System <no-reply@{$mcms->settings['homeurl']}>"."\r\n";
+	{$imp->settings['site_name']} Mailer";
+	$subject = "Contact Us Form - {$imp->settings['site_name']}";
+	$header_from .= "From: {$imp->settings['site_name']} Mailer System <no-reply@{$imp->settings['homeurl']}>"."\r\n";
 	mail($to, $subject, $message, $header_from);
 }
 $smarty->assign('success',$success);

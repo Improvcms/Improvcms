@@ -55,7 +55,7 @@ if (isset($_REQUEST['submit24']))
 		{
 			$message = preg_replace("#\[page=custom\](.*)\[\/page\]#iUs","",$_REQUEST['message']);
 		}
-		$result = create_page($_REQUEST['title'],$_REQUEST['subject'],$message,$mcms->user['uid'],0);
+		$result = create_page($_REQUEST['title'],$_REQUEST['subject'],$message,$imp->user['uid'],0);
 		if(!$result)
 		{
 			$message = "There was an error creating this page";

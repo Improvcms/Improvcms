@@ -35,9 +35,9 @@ function fbrecommend_info()
 }
 function fbrecommend_execute()
 {
-	global $mcms;
+	global $imp;
 	$block = '<table width="180"><tr><td>
-	<iframe src="http://www.facebook.com/plugins/recommendations.php?site='.urlencode($mcms->settings['siteurl']).'&amp;width=180&amp;height=300&amp;header=false&amp;colorscheme=light&amp;font=arial&amp;border_color=cyan" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:300px;" allowTransparency="true">
+	<iframe src="http://www.facebook.com/plugins/recommendations.php?site='.urlencode($imp->settings['siteurl']).'&amp;width=180&amp;height=300&amp;header=false&amp;colorscheme=light&amp;font=arial&amp;border_color=cyan" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:180px; height:300px;" allowTransparency="true">
 	</iframe></td></tr></table>';
 	return $block;
 }

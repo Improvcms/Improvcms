@@ -34,7 +34,7 @@ function fbcomments_info()
 }
 function fbcomments_execute()
 {
-	global $mcms, $loc;
+	global $imp, $loc;
 	if($loc=='view.php')
 	{
 		global $page;
@@ -42,7 +42,7 @@ function fbcomments_execute()
 	}
 	$block = '<table width="180"><tr><td>
 	<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script>
-	<fb:comments xid="'.urlencode($mcms->settings['siteurl'].'/'.$loc.$ext).'" numposts="10" width="425" publish_feed="true"></fb:comments></td></tr></table>';
+	<fb:comments xid="'.urlencode($imp->settings['siteurl'].'/'.$loc.$ext).'" numposts="10" width="425" publish_feed="true"></fb:comments></td></tr></table>';
 	return $block;
 }
 ?>

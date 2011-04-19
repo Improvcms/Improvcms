@@ -426,7 +426,7 @@ case "logout":
 	setcookie("millionsession","",time()-3600);
 	setcookie("mcmsuid","",time()-3600);
 	// Remove the session.
-	$db->query("UPDATE ".TABLE_PREFIX."users SET session='0' WHERE uid='{$mcms->user['uid']}'");
+	$db->query("UPDATE ".TABLE_PREFIX."users SET session='0' WHERE uid='{$imp->user['uid']}'");
 	// Redirect to the index page.
 	redirect("./index.php");
 break;
