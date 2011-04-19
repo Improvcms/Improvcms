@@ -1,13 +1,13 @@
 ﻿<?php
 /*
-MillionCMS Project
+ImprovCMS Project
     
     Name: AdminCP Table Inserts
     Description: Contains the data to create/insert data for the ACP.
 
     Author: Kyuubi, Azareal and Damian
 
-    Copyright (c) 2010 Kyuubi, Azareal and MillionCMS Group
+    Copyright (c) 2010 Kyuubi, Azareal and Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -68,7 +68,7 @@ VALUES
 ('admin_index','2','<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
 <head>
-<title>ACP Login | MillionCMS</title>
+<title>ACP Login | ImprovCMS</title>
 <meta name=\"description\" content=\"\" />
 <meta name=\"keywords\" content=\"\" />
 <link rel=\"stylesheet\" type=\"text/css\" href=\"css/login_style.css\" title=\"style\" media=\"screen\" /> 
@@ -125,7 +125,7 @@ a:active {
 <div id=\"wrap\">
             <div class=\"idea\">
             <img src=\"images/info.png\" alt=\"\"/>
-            <p>Welcome to MillionCMS! Please enter your details below...</p>
+            <p>Welcome to ImprovCMS! Please enter your details below...</p>
             </div>
             
             <div class=\"error\">
@@ -152,7 +152,7 @@ a:active {
             </form>
         </div>
   <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" width=\"312\" height=\"600\" /></a><br /></center>
-    <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 MillionCMS - <a href=\"http://millioncms.com\">Home Page</a> - <a href=\"http://millioncms.com/forums\">Support</a></span></div>
+    <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 ImprovCMS - <a href=\"http://improvcms.com\">Home Page</a> - <a href=\"http://improvcms.com/forums\">Support</a></span></div>
     </div>
 </body>
 </html>')";
@@ -168,7 +168,7 @@ $ntemplate1 = "INSERT INTO {$prefix}admin_templates (name, templateset, content)
 VALUES
 ('admin_start','{$setid}','<html>
   <head>
-    <title>Admin Center | MillionCMS</title>
+    <title>Admin Center | ImprovCMS</title>
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
     <link href=\"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css\" rel=\"stylesheet\" type=\"text/css\" />    
     <link href=\"../css/AeroWindow.css?r=123\" rel=\"stylesheet\" type=\"text/css\" />
@@ -182,7 +182,7 @@ VALUES
     \$(document).ready(function() {
 	 \$(\'#home\').click(function() {
           \$(\'#home_app\').AeroWindow({
-            WindowTitle:          \'Home | MillionCMS\',
+            WindowTitle:          \'Home | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -193,7 +193,7 @@ VALUES
 		
         \$(\'#pages\').click(function() {
           \$(\'#pages_app\').AeroWindow({
-            WindowTitle:          \'Pages | MillionCMS\',
+            WindowTitle:          \'Pages | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -204,7 +204,7 @@ VALUES
 		
         \$(\'#settings\').click(function() {
           \$(\'#settings_app\').AeroWindow({
-            WindowTitle:          \'Settings | MillionCMS\',
+            WindowTitle:          \'Settings | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -215,7 +215,7 @@ VALUES
 		
         \$(\'#members\').click(function() {
           \$(\'#members_app\').AeroWindow({
-            WindowTitle:          \'Members | MillionCMS\',
+            WindowTitle:          \'Members | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -226,7 +226,7 @@ VALUES
 		
         \$(\'#help\').click(function() {
           \$(\'#help_app\').AeroWindow({
-            WindowTitle:          \'Help &amp; Support | MillionCMS\',
+            WindowTitle:          \'Help &amp; Support | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -237,7 +237,7 @@ VALUES
 		
         \$(\'#change_bg\').click(function() {
           \$(\'#change_bg_app\').AeroWindow({
-            WindowTitle:          \'Change Background | MillionCMS\',
+            WindowTitle:          \'Change Background | ImprovCMS\',
             WindowPositionTop:    \'center\',
             WindowPositionLeft:   \'center\',
             WindowWidth:          1100,
@@ -268,7 +268,7 @@ VALUES
   <body>
   
   <!-- Message\'s for User -->
-  <div id=\"msg_welcome\" style=\"display:none;\"> Welcome to MillionCMS! Your Session is loading...</div>
+  <div id=\"msg_welcome\" style=\"display:none;\"> Welcome to ImprovCMS! Your Session is loading...</div>
   <div id=\"msg_error\" style=\"display:none;\"> Warning: There has been an error - #xxxx</div>
   <div id=\"msg_saved\" style=\"display:none;\"> Setting\'s Saved</div>
   <div id=\"msg_loading\" style=\"display:none;\"> Loading...</div>
@@ -343,7 +343,7 @@ VALUES
 ('admin_redirect','{$setid2}','<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
 <head>
-<title>ACP Login | MillionCMS</title>
+<title>ACP Login | ImprovCMS</title>
 <meta name=\"description\" content=\"\" />
 <meta name=\"keywords\" content=\"\" />
 <meta http-equiv=\"refresh\" content=\"5;url=modules/home_main.php\">
@@ -362,8 +362,8 @@ VALUES
             <img align=\"absmiddle\" src=\"images/loader_bar.gif\"><br />&nbsp;Processing your Request...
           </div>
         </div>
-  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"MillionCMS\" width=\"312\" height=\"600\" /></a><br /></center>
-    <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 MillionCMS - <a href=\"http://millioncms.com\">Home Page</a> - <a href=\"http://millioncms.com/forums\">Support</a></span></div>
+  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"ImprovCMS\" width=\"312\" height=\"600\" /></a><br /></center>
+    <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 ImprovCMS - <a href=\"http://ImprovCMS.com\">Home Page</a> - <a href=\"http://ImprovCMS.com/forums\">Support</a></span></div>
     </div>        
 </div>
 </body>
@@ -375,7 +375,7 @@ VALUES
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
 <head>
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
-<title>Welcome | MillionCMS ACP</title>
+<title>Welcome | ImprovCMS ACP</title>
 <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/admin.css\"/>
 <script type=\"text/javascript\" src=\"../js/jquery-1.4.2.js\"></script> 
 <script type=\"text/javascript\" src=\"../js/jquery-ui-1.8.1.custom.min.js\"></script> 
@@ -421,7 +421,7 @@ a:active {
 	<br />
 	<span style=\"color:#000; font-weight:3000;\">{\$imp->settings.site_name}</span>
 	<br /><br />
-	<span style=\"color:#000; font-weight:3000;\">Your version of MillionCMS is up-to-date!</span>
+	<span style=\"color:#000; font-weight:3000;\">Your version of ImprovCMS is up-to-date!</span>
 	<br /><br />
 	<span style=\"color:#000; font-weight:3000; font-size:30px;\"><u><a href=\"home_main.php\">Enter your Admin Control Panel &gt;</a></u></span>
 	</div>
@@ -449,7 +449,7 @@ VALUES
 	</div>
 	<div id=\"info\">
 		<div id=\"forum-name\">
-			Welcome to MillionCMS
+			Welcome to ImprovCMS
 		</div>
 	</div>
 <ul id=\"navigation\">
@@ -501,7 +501,7 @@ VALUES
 					<li><a href=\"ext_plugins.php\"><img src=\"../icons/plugin.png\" width=\"16\" height=\"16\" border=\"0\" /> Plugins</a></li>
 					<li><a href=\"ext_gadgets.php\"><img src=\"../icons/plugin.png\" width=\"16\" height=\"16\" border=\"0\" /> Gadgets</a></li>
 					<li><a href=\"ext_bridge.php\"><img src=\"../icons/arrow_switch.png\" width=\"16\" height=\"16\" border=\"0\" /> Bridge Manager</a></li>
-					<li><a href=\"ext_official.php\"><img src=\"../icons/asterisk_orange.png\" width=\"16\" height=\"16\" border=\"0\" /> MillionCMS Official</a></li>
+					<li><a href=\"ext_official.php\"><img src=\"../icons/asterisk_orange.png\" width=\"16\" height=\"16\" border=\"0\" /> ImprovCMS Official</a></li>
                </ul>
           </ul>
           <ul id=\"category\">
@@ -812,67 +812,38 @@ VALUES
 </tr>
 </table>
 <br/><br/>
-<span class=\"section-title\">The Development Team at MillionCMS
+<span class=\"section-title\">Who made ImprovCMS?
 </span>
 <span class=\"bold\">
   <br/>
   <table width=\"100%\" border=\"0\">
     <tr>
-      <td width=\"20%\">
+      <td width=\"33%\">
         <strong>Management Members
         </strong>
       </td>
-      <td width=\"20%\">
+      <td width=\"33%\">
         <strong>Developer Team Members
         </strong>
       </td>
-      <td width=\"20%\">
-        <strong>Support Team Members
-        </strong>
-      </td>
-      <td width=\"20%\">
+      <td width=\"33%\">
         <strong>SQA  Team Members</strong>
       </td>
-	  <td width=\"20%\">
-		<strong>Public Relations</strong>
-	  </td>
     </tr>
     <tr>
-      <td width=\"20%\"><i>Gordon Hughes</i></td>
-      <td width=\"20%\"><span title=\"Damian\">Damian Sharpe</span></td>
-      <td width=\"20%\">Josh R.</td>
-	  <td width=\"20%\">Austin</td>
-	  <td width=\"20%\"><i><span title=\"Chaos\">Derek M</span></i></td>
+      <td width=\"33%\"><i>Gordon Hughes</i></td>
+      <td width=\"33%\">Rob Chambers</td>
+      <td width=\"33%\">Austin</td>
       </tr>
     <tr>
-      <td width=\"20%\"><i>Azareal</i></td>
-      <td width=\"20%\"><span title=\"Raninf\">Steven Shao</span></td>
-      <td width=\"20%\"><i><span title=\"Darkly\">Justin L.</span></i></td>
-      <td width=\"20%\"><span title=\"Dimon\">Aashik Poonja</span></td>
+      <td width=\"33%\"><i>Azareal</i></td>
+      <td width=\"33%\"><i>Malietjie</span></td>
+      <td width=\"33%\">&nbsp;</td>
     </tr>
     <tr>
-	 <td width=\"20%\">Tom Holmes</td>
-     <td width=\"20%\"><span title=\"Poiuyt580\">Steven</span></td>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\">amon91</td>
-    </tr>
-    <tr>
-      <td width=\"20%\"><span title=\"Polarbear541\">Kieran Dunbar</span></td>
-      <td width=\"20%\"><span title=\"Malietjie\">Andre Merwe</span></td>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\">&nbsp;</td>
-    </tr>
-    <tr>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\">Lee Merriman</td>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\">&nbsp;</td>
-    </tr>   
-    <tr>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\"></td>
-      <td width=\"20%\">&nbsp;</td>
-      <td width=\"20%\">&nbsp;</td>
+	 <td width=\"33%\">&nbsp;</td>
+     <td width=\"33%\">Firestar</td>
+     <td width=\"33%\">&nbsp;</td>
     </tr>
   </table>
 </span>
