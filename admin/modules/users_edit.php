@@ -52,12 +52,12 @@ $user_account_adminstyle = $row['adminstyle'];
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $mcms->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -138,7 +138,7 @@ $user_account_adminstyle = $row['adminstyle'];
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              
@@ -300,7 +300,7 @@ $user_account_adminstyle = $row['adminstyle'];
                               </tr>
                               
                               <?php
-								if(!$perms->founder($mcms->user['uid']))
+								if(!$perms->founder($imp->user['uid']))
 								{
 									$disabled = 'disabled="disabled"';
 								}
@@ -328,7 +328,7 @@ $user_account_adminstyle = $row['adminstyle'];
                         </table>
                         <br />
                         <div align="center"><input <?php
-						if(!$perms->level_check($mcms->user['uid'],$user_id_useredit) && $mcms->user['uid']!=$user_id_useredit)
+						if(!$perms->level_check($imp->user['uid'],$user_id_useredit) && $imp->user['uid']!=$user_id_useredit)
 						{
 							echo "disabled='disabled' ";
 						}

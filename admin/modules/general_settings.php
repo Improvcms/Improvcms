@@ -28,14 +28,14 @@ if (!$is_admin) {
     	<div id="logo_user_details">
         	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;">
 			<?php 
-			echo $mcms->settings['site_name'];
+			echo $imp->settings['site_name'];
 			?>
 			<br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -125,7 +125,7 @@ if (!$is_admin) {
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              
@@ -168,14 +168,14 @@ if (!$is_admin) {
                                 <td><span class='title_text'>Site On/Off?</span></td>
                                 <td>
                                 <!-- On is 1 and Off is 0 -->                                                                                
-              					<input type="radio" <?php if($mcms->settings['site_switch'] == '1') { echo 'checked="checked"'; }; ?> name="site_switch_input" id="1" value="1" /> On
-     		  					<input type="radio" <?php if($mcms->settings['site_switch'] == '0') { echo 'checked="checked"'; }; ?> name="site_switch_input" id="0" value="0" /> Off
+              					<input type="radio" <?php if($imp->settings['site_switch'] == '1') { echo 'checked="checked"'; }; ?> name="site_switch_input" id="1" value="1" /> On
+     		  					<input type="radio" <?php if($imp->settings['site_switch'] == '0') { echo 'checked="checked"'; }; ?> name="site_switch_input" id="0" value="0" /> Off
                                 </td>
                               </tr>
                             
                               <tr>
                                 <td><span class='title_text'>Site Message:</span></td>
-                                <td><input style="width:50%" type="text" id="site_message_input" name="site_message_input" value="<?php echo $mcms->settings['site_message'] ?>" /></td>
+                                <td><input style="width:50%" type="text" id="site_message_input" name="site_message_input" value="<?php echo $imp->settings['site_message'] ?>" /></td>
                               </tr>                    	
                             </tbody>
                         </table>
@@ -194,22 +194,22 @@ if (!$is_admin) {
                             
                               <tr>
                                 <td><span class='title_text'>Site URL:</span></td>
-                                <td><input style="width:50%" type="text" name="site_url_input" id="site_url_input" value="<?php echo $mcms->settings['siteurl'] ?>" /></td>
+                                <td><input style="width:50%" type="text" name="site_url_input" id="site_url_input" value="<?php echo $imp->settings['siteurl'] ?>" /></td>
                               </tr>
                             
                               <tr>
                                 <td><span class='title_text'>Home URL:</span></td>
-                                <td><input style="width:50%" type="text" name="home_url_input" id="home_url_input" value="<?php echo $mcms->settings['homeurl'] ?>" /></td>
+                                <td><input style="width:50%" type="text" name="home_url_input" id="home_url_input" value="<?php echo $imp->settings['homeurl'] ?>" /></td>
                               </tr>
                             
                               <tr>
                                 <td><span class='title_text'>Site Email:</span></td>
-                                <td><input style="width:50%" type="text" name="master_email_input" id="master_email_input" value="<?php echo $mcms->settings['site_email'] ?>" /></td>
+                                <td><input style="width:50%" type="text" name="master_email_input" id="master_email_input" value="<?php echo $imp->settings['site_email'] ?>" /></td>
                               </tr>
                             
                               <tr>
                                 <td><span class='title_text'>Website Name:</span></td>
-                                <td><input style="width:50%" type="text" name="site_name_input" id="site_name_input" value="<?php echo $mcms->settings['site_name'] ?>" /></td>
+                                <td><input style="width:50%" type="text" name="site_name_input" id="site_name_input" value="<?php echo $imp->settings['site_name'] ?>" /></td>
                               </tr>
                                                  	
                             </tbody>

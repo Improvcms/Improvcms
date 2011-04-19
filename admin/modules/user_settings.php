@@ -26,12 +26,12 @@ if (!$is_admin) {
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $mcms->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -119,7 +119,7 @@ if (!$is_admin) {
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              
@@ -161,12 +161,12 @@ if (!$is_admin) {
                             
                               <tr>
                                 <td><span class='title_text'>Width:</span></td>
-                                <td><input type="text" name="avatar_maxwidth" id="avatar_maxwidth" value="<?php echo $mcms->settings['avatar_maxwidth'] ?>" /></td>
+                                <td><input type="text" name="avatar_maxwidth" id="avatar_maxwidth" value="<?php echo $imp->settings['avatar_maxwidth'] ?>" /></td>
                               </tr>
                             
                               <tr>
                                 <td><span class='title_text'>Height:</span></td>
-                                <td><input type="text" name="avatar_maxheight" id="avatar_maxheight" value="<?php echo $mcms->settings['avatar_maxheight'] ?>" /></td>
+                                <td><input type="text" name="avatar_maxheight" id="avatar_maxheight" value="<?php echo $imp->settings['avatar_maxheight'] ?>" /></td>
                               </tr>
                                                  	
                             </tbody>

@@ -40,7 +40,7 @@ if ($_GET['action']=='delete_user')
 	if(!empty($_GET['uid']))
 	{
 		$uid = $db->sanitise($_GET['uid']);
-		if(confirm_user($uid) && !$perms->super_admin($uid) && !$perms->cross_check("can_access_admincp",$uid) && $perms->level_check($mcms->user['uid'],$uid))
+		if(confirm_user($uid) && !$perms->super_admin($uid) && !$perms->cross_check("can_access_admincp",$uid) && $perms->level_check($imp->user['uid'],$uid))
 		{
 			$query = $db->query("SELECT * FROM ".TABLE_PREFIX."users WHERE uid='{$uid}'");
 			$backup = $db->fetch_array($query);
@@ -50,7 +50,7 @@ if ($_GET['action']=='delete_user')
 			$detail['post'] = null;
 			$details = serialize($detail);
 			$time = time();
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','delete','users','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','delete','users','{$details}') ");
 			redirect('./users.php?action=done');
 		}
 	}
@@ -79,7 +79,7 @@ if(isset($_POST['create_user']))
 		$detail['fields'][] = 'lastactive';
 		$detail['fields'][] = 'gid';
 		$details = serialize($detail);
-		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','insert','users','{$details}') ");
+		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','insert','users','{$details}') ");
 		$newuser = true;
 	}
 }
@@ -92,12 +92,12 @@ redirect('users_edit.php?uid='.$newid,0);
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $mcms->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -178,7 +178,7 @@ redirect('users_edit.php?uid='.$newid,0);
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              

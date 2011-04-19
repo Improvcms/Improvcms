@@ -52,12 +52,12 @@ $ava = "<img src='../../images/groups/{$lowgroup}.png' style='max-height:40; ver
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $mcms->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -138,7 +138,7 @@ $ava = "<img src='../../images/groups/{$lowgroup}.png' style='max-height:40; ver
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              
@@ -191,7 +191,7 @@ $ava = "<img src='../../images/groups/{$lowgroup}.png' style='max-height:40; ver
                             
                               <tr>
                                 <td><span class='title_text'>Group Icon (URL):</span></td>
-                                <td><input readonly="readonly" id="group_icon" name="group_icon" style="width:50%" type="text" value="<?php echo $mcms->settings['siteurl'].'images/groups/'.strtolower($user_group_name).'.png'; ?>" /></td>
+                                <td><input readonly="readonly" id="group_icon" name="group_icon" style="width:50%" type="text" value="<?php echo $imp->settings['siteurl'].'images/groups/'.strtolower($user_group_name).'.png'; ?>" /></td>
                               </tr>
                               
                               <?php
@@ -284,7 +284,7 @@ $ava = "<img src='../../images/groups/{$lowgroup}.png' style='max-height:40; ver
                         <br />
                         <div align="center">
                         <input <?php
-						if(!$perms->level_check($mcms->user['gid'],$user_group_id,'gid')===true && !$perms->super_admin($mcms->user['uid']))
+						if(!$perms->level_check($imp->user['gid'],$user_group_id,'gid')===true && !$perms->super_admin($imp->user['uid']))
 						{
 							echo "disabled='disabled' ";
 						}

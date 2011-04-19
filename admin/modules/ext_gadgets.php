@@ -19,7 +19,7 @@ if(isset($_POST['perfaction']))
 		$cache[$gadget]['position'] = $_POST['position'];
 		$update = serialize($cache);
 		$db->new_update('cache','content='.$update,'name=gadgets');
-		$mcms->cache['gadgets'] = $update;
+		$imp->cache['gadgets'] = $update;
 	}
 	// In this case, check if the gadget still.. exists
 	if($gadgets->checkgadget($gadget) && ($_POST['position']=='left' || $_POST['position']=='right' || $_POST['position']=='top'))
@@ -32,7 +32,7 @@ if(isset($_POST['perfaction']))
 		$cache['active'][$gadget] = 1;
 		$update = serialize($cache);
 		$db->new_update('cache','content='.$update,'name=gadgets');
-		$mcms->cache['gadgets'] = $update;
+		$imp->cache['gadgets'] = $update;
 	}
 	unset($gadget);
 	unset($cache);
@@ -50,7 +50,7 @@ elseif(isset($_POST['switch']))
 		unset($cache['active'][$gadget]);
 		$update = serialize($cache);
 		$db->new_update('cache','content='.$update,'name=gadgets');
-		$mcms->cache['gadgets'] = $update;
+		$imp->cache['gadgets'] = $update;
 	}
 }
 ?>
@@ -70,12 +70,12 @@ elseif(isset($_POST['switch']))
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $mcms->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $mcms->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../../index.php">Return to Home</a></li>
@@ -160,7 +160,7 @@ elseif(isset($_POST['switch']))
                         Copyright &copy; 2010<br /><br />                        
                         Script executed in <?php echo $globtime ?>s<br />
                         <?php echo $db->queries ?> SQL queries used<br /><br />
-                        Version: <?php echo $mcms->fversion; ?><br />
+                        Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
                 </div>              
