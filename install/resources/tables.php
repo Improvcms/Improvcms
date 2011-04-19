@@ -146,7 +146,7 @@ VALUES
 </div>
 {include file=\'db:footer\'}
 <div id=\"show_page_edit\" style=\"display: none;\">
-<iframe src=\"{\$mcms->settings.siteurl}/view.php?fetch=options&amp;pid={\$pid}\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
+<iframe src=\"{\$imp->settings.siteurl}/view.php?fetch=options&amp;pid={\$pid}\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
 <div class=\"iframeHelper\"></div></div>
 </html>')";
 
@@ -154,7 +154,7 @@ $insert3 = "INSERT INTO {$prefix}templates (name, content)
 VALUES
 ('header','<body>
 <div id=\"header\">
-<div align=\"center\"><a href=\"index.php\"><img src=\"./images/logo.png\" alt=\"[{\$mcms->settings.site_name} Logo]\" title=\"{\$mcms->settings.site_name}\" /></a></div>
+<div align=\"center\"><a href=\"index.php\"><img src=\"./images/logo.png\" alt=\"[{\$imp->settings.site_name} Logo]\" title=\"{\$imp->settings.site_name}\" /></a></div>
 <div align=\"center\"><ul class=\"nav\">
 <li><a class=\"nav\" href=\"index.php\">Home</a></li>
 {\$header_guest}
@@ -166,9 +166,9 @@ VALUES
 <div id=\"welcomeblock\">
 <br />
 <table border=\"1\" width=\"100%\" class=\"tborder\" cellspacing=\"0\">
-<tr class=\"trow\"><td width=\"90\"><img src=\"{\$avatar}\" alt=\"{\$mcms->user.username} Avatar\" title=\"{\$username} Avatar\" width=\"90\" /></td><td>Welcome, {\$username}!
+<tr class=\"trow\"><td width=\"90\"><img src=\"{\$avatar}\" alt=\"{\$imp->user.username} Avatar\" title=\"{\$username} Avatar\" width=\"90\" /></td><td>Welcome, {\$username}!
 <br />
-<a href=\"options.php\">Your CP</a> | <a href=\"view.php?uid={\$mcms->user.uid}\">Your Pages</a>
+<a href=\"options.php\">Your CP</a> | <a href=\"view.php?uid={\$imp->user.uid}\">Your Pages</a>
 </td></tr></table></div>
 </div>')";
 
@@ -176,7 +176,7 @@ $insert4 = "INSERT INTO {$prefix}templates (name, content)
 VALUES
 ('index','<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
-<head><title>{\$mcms->settings.site_name} Index Page</title>
+<head><title>{\$imp->settings.site_name} Index Page</title>
 {include file=\'db:header_includes\'}
 {\$commenthead}
 </head>
@@ -225,7 +225,7 @@ VALUES
 Powered by <a href=\"http://improvcms.com\">ImprovCMS</a><br />Copyright &copy; 2011 Improv Software Group
 </div>
 <div id=\"show_toolbox\" style=\"display: none;\">
-<iframe src=\"{\$mcms->settings.siteurl}/toolbox.php?mode=jquery\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
+<iframe src=\"{\$imp->settings.siteurl}/toolbox.php?mode=jquery\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
 <div class=\"iframeHelper\"></div></div>')";
 
 $insert7 = "INSERT INTO {$prefix}templates (name, content)
@@ -233,7 +233,7 @@ VALUES
 ('header_includes','<link href=\"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css\" rel=\"stylesheet\" type=\"text/css\"/>
 <link rel=\"stylesheet\" type=\"text/css\" href=\"./styles/AeroWindow.css\" />
 <link rel=\"stylesheet\" type=\"text/css\" href=\"./styles/default.css\" />
-<link rel=\"shortcut icon\" href=\"{\$mcms->settings.siteurl}/favicon.ico\" />
+<link rel=\"shortcut icon\" href=\"{\$imp->settings.siteurl}/favicon.ico\" />
 <script type=\"text/javascript\" src=\"./js/jquery/jquery-142.js\"></script>
 <script type=\"text/javascript\" src=\"./js/jquery/jquery-ui-1.8.1.custom.min.js\"></script>
 <script type=\"text/javascript\" src=\"./js/jquery/jquery.easing.1.3.js\"></script>
@@ -388,13 +388,13 @@ VALUES
 </td></tr></table>
 {include file=\'db:footer\'}
 <div id=\"show_page_edit\" style=\"display: none;\">
-<iframe src=\"{\$mcms->settings.siteurl}/view.php?fetch=options&amp;pid={\$pid}\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
+<iframe src=\"{\$imp->settings.siteurl}/view.php?fetch=options&amp;pid={\$pid}\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
 <div id=\"iframeHelper\"></div></div>
 <div id=\"show_page_report\" style=\"display: none;\">{\$report}</div>')";
 
 $insert17 = "INSERT INTO {$prefix}templates (name, content)
 VALUES
-('report_view_toolbox','<iframe src=\"{\$mcms->settings[siteurl]}/toolbox.php?mode=jquery&amp;page=report&amp;pid=$pid\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
+('report_view_toolbox','<iframe src=\"{\$imp->settings[siteurl]}/toolbox.php?mode=jquery&amp;page=report&amp;pid=$pid\" width=\"100%\" height=\"100%\" style=\"border: 0px;\" frameborder=\"0\"></iframe>
 <div id=\"iframeHelper\"></div>')";
 
 $insert18 = "INSERT INTO {$prefix}templates (name, content)
@@ -512,7 +512,7 @@ $insert27 = "INSERT INTO {$prefix}templates (name, content)
 VALUES
 ('page_contact','<html>
 <head>
-<title>{\$mcms->settings[site_name]} - Contact Us Form</title>
+<title>{\$imp->settings[site_name]} - Contact Us Form</title>
 {include file=\'db:header_includes\'}
 </head>
 {include file=\'db:header\'}
@@ -693,7 +693,7 @@ $perms5 = "UPDATE {$prefix}usergroups SET permissions='{$perms}' WHERE name='{$n
 $time = time();
 $page1 = "INSERT INTO {$prefix}pages (title, nicetitle, content, status, author, datecreated, lastupdated)
 VALUES
-('index','{\$mcms->settings[site_name]} Frontpage',
+('index','{\$imp->settings[site_name]} Frontpage',
 '[page=custom][content=pagelist][/content][/page]Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 '6','-1','{$time}','{$time}')";
 $cache1 = "INSERT INTO {$prefix}cache (name)

@@ -151,7 +151,7 @@ a:active {
             </div>
             </form>
         </div>
-  <center><a href=\"{\$mcms->settings.homeurl}\"><img src=\"images/logo.png\" width=\"312\" height=\"600\" /></a><br /></center>
+  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" width=\"312\" height=\"600\" /></a><br /></center>
     <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 MillionCMS - <a href=\"http://millioncms.com\">Home Page</a> - <a href=\"http://millioncms.com/forums\">Support</a></span></div>
     </div>
 </body>
@@ -286,7 +286,7 @@ VALUES
 		<a href=\"../logout.php\"><img id=\"logout\" border=\"0\" src=\"../images/normal_view/logout.png\"></a>
 	</div>
 	<div id=\"logo_wrap\">
-		<a href=\"{\$mcms->settings[\'homeurl\']}\"><img style=\"position:absolute;bottom:25;\" src=\"../images/normal_view/logo.png\"></a>
+		<a href=\"{\$imp->settings[\'homeurl\']}\"><img style=\"position:absolute;bottom:25;\" src=\"../images/normal_view/logo.png\"></a>
 		<a href=\"#\"><img id=\"change_bg\" style=\"position:absolute;bottom:0;\" border=\"0\" src=\"../images/normal_view/bg_change.png\"></a>
 	</div>
 	<div id=\"iconContainer\">
@@ -362,7 +362,7 @@ VALUES
             <img align=\"absmiddle\" src=\"images/loader_bar.gif\"><br />&nbsp;Processing your Request...
           </div>
         </div>
-  <center><a href=\"{\$mcms->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"MillionCMS\" width=\"312\" height=\"600\" /></a><br /></center>
+  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"MillionCMS\" width=\"312\" height=\"600\" /></a><br /></center>
     <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 MillionCMS - <a href=\"http://millioncms.com\">Home Page</a> - <a href=\"http://millioncms.com/forums\">Support</a></span></div>
     </div>        
 </div>
@@ -406,7 +406,7 @@ a:active {
 <body style=\"argin-left: auto; margin-right: auto; text-align: center; vertical-align: center; height:100%; background:url(../images/silhouette_building.png); background-position:center; background-repeat:no-repeat;\">
 
 <!-- Message\'s for User -->
-  <div id=\"msg_welcome\" style=\"display:none;\"> Welcome to the {\$mcms->settings.site_name} Admin Control Panel! Your Session is loaded.</div>
+  <div id=\"msg_welcome\" style=\"display:none;\"> Welcome to the {\$imp->settings.site_name} Admin Control Panel! Your Session is loaded.</div>
 <!-- End Message\'s for User -->
 <script type=\"text/javascript\">
 	\$(document).ready(function () {
@@ -419,7 +419,7 @@ a:active {
 	<div style=\"height:1000px;\">
 	<img src=\"../images/welcome_logo.png\" width=\"800\" height=\"350\" />
 	<br />
-	<span style=\"color:#000; font-weight:3000;\">{\$mcms->settings.site_name}</span>
+	<span style=\"color:#000; font-weight:3000;\">{\$imp->settings.site_name}</span>
 	<br /><br />
 	<span style=\"color:#000; font-weight:3000;\">Your version of MillionCMS is up-to-date!</span>
 	<br /><br />
@@ -445,7 +445,7 @@ VALUES
 $atemplate4 = "INSERT INTO {$prefix}admin_templates (name, templateset, content)
 VALUES
 ('header','{$setid2}','<div id=\"header\">
-		<div id=\"logo\">{\$mcms->settings.site_name}<span class=\"slogan\">Admin Panel</span>
+		<div id=\"logo\">{\$imp->settings.site_name}<span class=\"slogan\">Admin Panel</span>
 	</div>
 	<div id=\"info\">
 		<div id=\"forum-name\">
@@ -455,7 +455,7 @@ VALUES
 <ul id=\"navigation\">
 	<li><a href=\"home_main.php\">Admin Home</a></li>
 	<li class=\"right\"><a href=\"../../../index.php\">Return to your Site &raquo;</a></li>
-	<li class=\"user\">You are logged in as {\$mcms->user.username} - <a href=\"../logout.php\" >Log Out?</a></li>
+	<li class=\"user\">You are logged in as {\$imp->user.username} - <a href=\"../logout.php\" >Log Out?</a></li>
 	</ul>
 </div>')";
 
