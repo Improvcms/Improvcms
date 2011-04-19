@@ -1,5 +1,5 @@
 <span style="float:left; margin-left:15px; display:inline-block;">
-	<?php echo "Copyright &copy; 2010 MillionCMS Version "; echo $mcms->fversion; ?>
+	<?php echo "Copyright &copy; 2010 MillionCMS Version "; echo $imp->fversion; ?>
 </span>
 
 <span style="float:right; margin-right:15px; display:inline-block;">
@@ -13,12 +13,12 @@
             echo $admin_style;
             if(isset($admin_style))
             {
-                $db->query("UPDATE ".TABLE_PREFIX."users SET admin_style='{$admin_style}' WHERE uid='{$mcms->user['uid']}'");
-                $mcms->user['admin_style'] = $admin_style;
+                $db->query("UPDATE ".TABLE_PREFIX."users SET admin_style='{$admin_style}' WHERE uid='{$imp->user['uid']}'");
+                $imp->user['admin_style'] = $admin_style;
             }
         }
             echo '<option id="default" ';
-            if($mcms->user['admin_style']==0)
+            if($imp->user['admin_style']==0)
             {
                 echo 'selected="selected" ';
             }
@@ -28,7 +28,7 @@
         foreach($result as $row) 
         {
             echo '<option ';
-            if($row['setid']==$mcms->user['admin_style']) 
+            if($row['setid']==$imp->user['admin_style']) 
             { 
                 echo 'selected="selected"'; 
             }

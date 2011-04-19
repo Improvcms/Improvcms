@@ -1,6 +1,6 @@
 <?php
 //===========================================================================
-//    MillionCMS Project
+//    ImprovCMS Project
 //    
 //    Name: Advanced Admin Control Panel Setting Inserting Script
 //    Version: Pre-Alpha
@@ -56,15 +56,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($site_switch_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$site_switch_output}' WHERE name='site_switch'");
-		if($mcms->settings['site_switch']!=$site_switch_output)
+		if($imp->settings['site_switch']!=$site_switch_output)
 		{
-			$detail['prev'] = $mcms->settings['site_switch'];
+			$detail['prev'] = $imp->settings['site_switch'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'site_switch';
 			$detail['post'] = $site_switch_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Site Message
@@ -72,15 +72,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($site_message_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$site_message_output}' WHERE name='site_message'");
-		if($mcms->settings['site_message']!=$site_message_output)
+		if($imp->settings['site_message']!=$site_message_output)
 		{
-			$detail['prev'] = $mcms->settings['site_message'];
+			$detail['prev'] = $imp->settings['site_message'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'site_message';
 			$detail['post'] = $site_message_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Site URL
@@ -88,15 +88,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($site_url_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$site_url_output}' WHERE name='siteurl'");
-		if($mcms->settings['siteurl']!=$site_url_output)
+		if($imp->settings['siteurl']!=$site_url_output)
 		{
-			$detail['prev'] = $mcms->settings['siteurl'];
+			$detail['prev'] = $imp->settings['siteurl'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'siteurl';
 			$detail['post'] = $site_url_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Home URL
@@ -104,15 +104,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($home_url_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$home_url_output}' WHERE name='homeurl'");
-		if($mcms->settings['homeurl']!=$home_url_output)
+		if($imp->settings['homeurl']!=$home_url_output)
 		{
-			$detail['prev'] = $mcms->settings['homeurl'];
+			$detail['prev'] = $imp->settings['homeurl'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'homeurl';
 			$detail['post'] = $home_url_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Master eMail
@@ -120,15 +120,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($master_email_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$master_email_output}' WHERE name='site_email'");
-		if($mcms->settings['site_email']!=$master_email_output)
+		if($imp->settings['site_email']!=$master_email_output)
 		{
-			$detail['prev'] = $mcms->settings['site_email'];
+			$detail['prev'] = $imp->settings['site_email'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'site_email';
 			$detail['post'] = $master_email_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Website Name
@@ -136,15 +136,15 @@ if(isset($_POST['general_settings']))
 	if(!empty($site_name_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$site_name_output}' WHERE name='site_name'");
-		if($mcms->settings['site_name']!=$site_name_output)
+		if($imp->settings['site_name']!=$site_name_output)
 		{
-			$detail['prev'] = $mcms->settings['site_name'];
+			$detail['prev'] = $imp->settings['site_name'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'site_name';
 			$detail['post'] = $site_name_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	if(!isset($_FILES['favicon_upload']))
@@ -154,7 +154,7 @@ if(isset($_POST['general_settings']))
 		$detail['file'] = 'favicon';
 		$detail['tmpname'] = $_FILES["favicon_upload"]["tmp_name"];
 		$details = serialize($detail);
-		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','upload','0','{$details}') ");
+		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','upload','0','{$details}') ");
 	}
 	
 	// Redirect and Exit
@@ -173,15 +173,15 @@ if(isset($_POST['user_settings']))
 	if(!empty($avatar_maxwidth_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$avatar_maxwidth_output}' WHERE name='avatar_maxwidth'");
-		if($mcms->settings['avatar_maxwidth']!=$avatar_maxwidth_output)
+		if($imp->settings['avatar_maxwidth']!=$avatar_maxwidth_output)
 		{
-			$detail['prev'] = $mcms->settings['avatar_maxwidth'];
+			$detail['prev'] = $imp->settings['avatar_maxwidth'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'avatar_maxwidth';
 			$detail['post'] = $avatar_maxwidth_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','user_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','user_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	// Avatar Max Height
@@ -189,15 +189,15 @@ if(isset($_POST['user_settings']))
 	if(!empty($avatar_maxheight_output))
 	{
 		$query = $db->query("UPDATE ".TABLE_PREFIX."settings SET content='{$avatar_maxheight_output}' WHERE name='avatar_maxheight'");
-		if($mcms->settings['avatar_maxheight']!=$avatar_maxheight_output)
+		if($imp->settings['avatar_maxheight']!=$avatar_maxheight_output)
 		{
-			$detail['prev'] = $mcms->settings['avatar_maxheight'];
+			$detail['prev'] = $imp->settings['avatar_maxheight'];
 			$detail['field'] = 'content';
 			$detail['record'] = 'avatar_maxheight';
 			$detail['post'] = $avatar_maxheight_output;
 			$detail['where'] = 'name';
 			$details = serialize($detail);
-			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','user_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
+			$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','user_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','settings','{$details}') ");
 		}
 	}
 	
@@ -219,7 +219,7 @@ if(isset($_POST['visual_preferences']))
 		$detail['file'] = 'normal_view_bg.jpg';
 		$detail['tmpname'] = $_FILES["bg_change"]["tmp_name"];
 		$details = serialize($detail);
-		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','upload','0','{$details}') ");
+		$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','general_settings.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','upload','0','{$details}') ");
 	}
 	
 	// Redirect and Exit
@@ -237,7 +237,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 	// Declare it here so we don't need to query the database everytime.
 	$prevuser = getuser($user_id_user_edit);
 	// Is this person authorised to edit this user?
-	if($perms->level_check($mcms->user['uid'],$user_id_user_edit) || $mcms->user['uid']==$user_id_user_edit)
+	if($perms->level_check($imp->user['uid'],$user_id_user_edit) || $imp->user['uid']==$user_id_user_edit)
 	{
 		// Username
 		$user_account_name_output = $db->sanitise($_POST['user_account_name_input']);
@@ -252,7 +252,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['post'] = $user_account_name_output;
 				$detail['where'] = 'uid';
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -270,7 +270,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['post'] = $newpassword;
 				$detail['where'] = 'uid';
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -287,7 +287,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_email_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -305,7 +305,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_title_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -322,13 +322,13 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_protect_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
 		// Super Admin
 		$user_account_superadmin_output = $db->sanitise(intval($_POST['user_account_superadmin_input']));
-		if(isset($user_account_superadmin_output) && $perms->founder($mcms->user['uid']))
+		if(isset($user_account_superadmin_output) && $perms->founder($imp->user['uid']))
 		{
 			if($prevuser['superadmin'])
 			{
@@ -347,7 +347,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_superadmin_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -364,7 +364,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_regip_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -381,7 +381,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_avatar_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -404,7 +404,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 				$detail['where'] = 'uid';
 				$detail['post'] = $user_account_staff_output;
 				$details = serialize($detail);
-				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+				$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 				unset($detail);
 			}
 		}
@@ -412,7 +412,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 		$user_account_groupid_output = intval($_POST['user_account_groupid_input']);
 		if(isset($user_account_groupid_output))
 		{
-			if($perms->level_check($mcms->user['gid'],$user_account_groupid_output,'gid')===true || $perms->super_admin($mcms->user['uid']))
+			if($perms->level_check($imp->user['gid'],$user_account_groupid_output,'gid')===true || $perms->super_admin($imp->user['uid']))
 			{
 				$prevgroup = $prevuser['gid'];
 				$query = $db->query("UPDATE ".TABLE_PREFIX."users SET gid='{$user_account_groupid_output}' WHERE uid='{$user_id_user_edit}'");
@@ -424,7 +424,7 @@ if(isset($_POST['user_edit']) && $perms->check_perms("can_edit_users"))
 					$detail['where'] = 'uid';
 					$detail['post'] = $user_account_groupid_output;
 					$details = serialize($detail);
-					$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
+					$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','users_edit.php','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','update','users','{$details}') ");
 					unset($detail);
 				}
 			}
@@ -476,7 +476,7 @@ if(isset($_POST['usergroup_edit']) && $perms->check_perms("admin:can_edit_usergr
 	}
 	
 	// Public Permissions
-	if($perms->level_check($mcms->user['gid'],$usergroup_id,'gid')===true || $perms->super_admin($mcms->user['uid']))
+	if($perms->level_check($imp->user['gid'],$usergroup_id,'gid')===true || $perms->super_admin($imp->user['uid']))
 	{
 		$prevperms = $perms->fetch_perms('usergroup',$usergroup_id);
 		include_once("../../../cache/permlist.php");
@@ -501,7 +501,7 @@ if(isset($_POST['usergroup_edit']) && $perms->check_perms("admin:can_edit_usergr
 		$bad = "&error=grouplev";
 	}
 	// Admin Permissions
-	if(($perms->check_perms("can_edit_adminperms") && $perms->level_check($mcms->user['gid'],$usergroup_id,'gid')===true) || $perms->super_admin($mcms->user['uid']))
+	if(($perms->check_perms("can_edit_adminperms") && $perms->level_check($imp->user['gid'],$usergroup_id,'gid')===true) || $perms->super_admin($imp->user['uid']))
 	{
 		$prevperms = $perms->fetch_perms('usergroup',$usergroup_id);
 		include_once("../../../cache/permlist.php");
@@ -535,7 +535,7 @@ if(isset($_POST['usergroup_edit']) && $perms->check_perms("admin:can_edit_usergr
 // *Error Message*
 // If user has been taken here with no expectation of editing settings...
 echo 'Wow! It seems like you have been directed here without any reason to edit settings!<br />';
-echo 'If you have been taken here by a form, contact the owner of this site; or if you are here because of browser problems, click back below and try agian!<br />';
+echo 'If you have been taken here by a form, contact the owner of this site; or if you are here because of browser problems, click back below and try again!<br />';
 echo '<input type="button" value="Click here to go Back" onClick="history.go(-1);return true;">';
 
 ?>

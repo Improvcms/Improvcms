@@ -245,67 +245,38 @@
 </table>
 <br/>
 <br/>
-<span class="section-title">The Development Team at MillionCMS
+<span class="section-title">Who made ImprovCMS?
 </span>
 <span class="bold">
   <br/>
   <table width="100%" border="0">
     <tr>
-      <td width="20%">
+      <td width="33%">
         <strong>Management Members
         </strong>
       </td>
-      <td width="20%">
+      <td width="33%">
         <strong>Developer Team Members
         </strong>
       </td>
-      <td width="20%">
-        <strong>Support Team Members
-        </strong>
-      </td>
-      <td width="20%">
+      <td width="33%">
         <strong>SQA  Team Members</strong>
       </td>
-	  <td width="20%">
-		<strong>Public Relations</strong>
-	  </td>
     </tr>
     <tr>
-      <td width="20%"><i>Gordon Hughes</i></td>
-      <td width="20%"><span title="Damian">Damian Sharpe</span></td>
-      <td width="20%">Josh R.</td>
-	  <td width="20%">Austin</td>
-	  <td width="20%"><i><span title="Chaos">Derek M</span></i></td>
+      <td width="33%"><i>Gordon Hughes</i></td>
+      <td width="33%">Rob Chambers</td>
+      <td width="33%">Austin</td>
       </tr>
     <tr>
-      <td width="20%"><i>Azareal</i></td>
-      <td width="20%"><span title="Raninf">Steven Shao</span></td>
-      <td width="20%"><i><span title="Darkly">Justin L.</span></i></td>
-      <td width="20%"><span title="Dimon">Aashik Poonja</span></td>
+      <td width="33%"><i>Azareal</i></td>
+      <td width="33%"><i>Malietjie</span></td>
+      <td width="33%">&nbsp;</td>
     </tr>
     <tr>
-	 <td width="20%">Tom Holmes</td>
-     <td width="20%"><span title="Poiuyt580">Steven</span></td>
-      <td width="20%">&nbsp;</td>
-      <td width="20%">amon91</td>
-    </tr>
-    <tr>
-      <td width="20%"><span title="Polarbear541">Kieran Dunbar</span></td>
-      <td width="20%"><span title="Malietjie">Andre Merwe</span></td>
-      <td width="20%">&nbsp;</td>
-      <td width="20%">&nbsp;</td>
-    </tr>
-    <tr>
-      <td width="20%">&nbsp;</td>
-      <td width="20%">Lee Merriman</td>
-      <td width="20%">&nbsp;</td>
-      <td width="20%">&nbsp;</td>
-    </tr>   
-    <tr>
-      <td width="20%">&nbsp;</td>
-      <td width="20%"></td>
-      <td width="20%">&nbsp;</td>
-      <td width="20%">&nbsp;</td>
+	 <td width="33%">&nbsp;</td>
+     <td width="33%">Firestar</td>
+     <td width="33%">&nbsp;</td>
     </tr>
   </table>
 </span>

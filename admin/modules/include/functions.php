@@ -105,7 +105,7 @@ function decipher_logs($logs)
 // Reverse update queries made by administrators.
 function reverse_action($logid)
 {
-	global $db, $loc, $mcms;
+	global $db, $loc, $imp;
 	$query = $db->query("SELECT * FROM ".TABLE_PREFIX."admin_logs WHERE logid='{$logid}'");
 	$result = $db->fetch_array($query);
 	$logs = unserialize($result['detail']);
@@ -115,7 +115,7 @@ function reverse_action($logid)
 	$time = time();
 	$logs = serialize($logs);
 	// Log it!
-	$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','{$loc}','{$mcms->user['uid']}','{$_SERVER['REMOTE_ADDR']}','reverse','{$result['itable']}','{$logs}') ");
+	$db->query("INSERT INTO ".TABLE_PREFIX."admin_logs (time,script,uid,ipaddress,action,itable,detail) VALUES ('{$time}','{$loc}','{$imp->user['uid']}','{$_SERVER['REMOTE_ADDR']}','reverse','{$result['itable']}','{$logs}') ");
 	// Return true to tell the upstream script our work here is done.
 }
 function clearcompiled()
