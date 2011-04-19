@@ -1,13 +1,13 @@
 <?php
 /*
-MillionCMS Project
+ImprovCMS Project
     
     Name: Options.
     Description: A sort of UserCP.
 	Last Update: 02 November 2010
     Author: Azareal
 
-    Copyright © 2010 Azareal and MillionCMS Group
+    Copyright © 2010 Azareal and Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ $loc = 'options.php';
 require_once("./global.php");
 
 // Need some permission to keep the guests out.
-if(!$perms->check_perms("can_view_toolbox") || $mcms->user['uid']==0)
+if(!$perms->check_perms("can_view_toolbox") || $imp->user['uid']==0)
 {
 	error("You do not have permission to view this page");
 	exit;
@@ -55,18 +55,18 @@ if(!empty($_REQUEST['changeavatar']))
 		$exts = split("[/\\.]",$_FILES['avatar']['name']) ; 
 		$n = count($exts)-1; 
 		$ext = $exts[$n];
-		$avi = "./images/uploads/avatars/".$mcms->user['uid'].'.'.$ext;
-		if (file_exists('./images/uploads/avatars/'.$mcms->user['uid'].'.'.$ext))
+		$avi = "./images/uploads/avatars/".$imp->user['uid'].'.'.$ext;
+		if (file_exists('./images/uploads/avatars/'.$imp->user['uid'].'.'.$ext))
 		{
-			unlink('./images/uploads/avatars/'.$mcms->user['uid'].'.'.$ext);
-			move_uploaded_file($_FILES['avatar']['tmp_name'],'./images/uploads/avatars/'.$mcms->user['uid'].'.'.$ext);
-			$db->query("UPDATE ".TABLE_PREFIX."users SET avatar='{$avi}' WHERE uid='{$mcms->user[uid]}'");
+			unlink('./images/uploads/avatars/'.$imp->user['uid'].'.'.$ext);
+			move_uploaded_file($_FILES['avatar']['tmp_name'],'./images/uploads/avatars/'.$imp->user['uid'].'.'.$ext);
+			$db->query("UPDATE ".TABLE_PREFIX."users SET avatar='{$avi}' WHERE uid='{$imp->user[uid]}'");
 			echo 'The upload was successful!';
 		}
 		else
 		{
-			move_uploaded_file($_FILES['avatar']['tmp_name'],'./images/uploads/avatars/'.$mcms->user['uid'].'.'.$ext);
-			$db->query("UPDATE ".TABLE_PREFIX."users SET avatar='{$avi}' WHERE uid='{$mcms->user[uid]}'");
+			move_uploaded_file($_FILES['avatar']['tmp_name'],'./images/uploads/avatars/'.$imp->user['uid'].'.'.$ext);
+			$db->query("UPDATE ".TABLE_PREFIX."users SET avatar='{$avi}' WHERE uid='{$imp->user[uid]}'");
 			echo 'The upload was successful!';
 		}
 	}
@@ -78,7 +78,7 @@ if(!empty($_REQUEST['changeavatar']))
 else // Otherwise, this is run
 {
 	// Do the template stuff.
-	$smarty->assign('name',$mcms->user['username']);
+	$smarty->assign('name',$imp->user['username']);
 	$smarty->display("db:usercp_page");
 }
 ?>
