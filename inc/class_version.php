@@ -34,8 +34,8 @@ class version
 	function data()
 	{
 		$latest = "Alpha 3 Development";
-		$lc = "003";
+		$lc = "300";
 		$current = "Alpa 3 Development";
-		$cc = "003";
+		$cc = "300";
 	}
 }
