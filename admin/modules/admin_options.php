@@ -95,7 +95,7 @@ $anotes = get_cache('admin_notes');
 			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
 				<li>
 					<ul id="user_access">
-						<li class="first"><a href="../../../index.php">Return to Home</a></li>
+						<li class="first"><a href="../../index.php">Return to Home</a></li>
 						<li class="last"><a href="../logout.php" >Log Out?</a></li>
 					</ul>
 				</li>
