@@ -70,7 +70,7 @@ else
 	$db_type = 'mysql';
 }
 // Instantiate the class
-$db = new mysql($config);
+$db = new {$db_type}($config);
 // Wake up our pixies.
 $imp = new core;
 unset($config);
