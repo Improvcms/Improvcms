@@ -28,6 +28,14 @@ ImprovCMS
 
 define("ROOT", dirname(__FILE__));
 error_reporting(E_ALL ^ E_NOTICE);
+function __autoload ($class)
+{
+	$file = ROOT."/inc/".str_replace('_',DIRECTORY_SEPARATOR,$class).'.class.php';
+	if(file_exists($file))
+	{
+		require_once($file);
+	}
+}
 $globstart = microtime(true);
 $loc = 'global.php';
 // Check if the configuration file exists.
@@ -47,13 +55,13 @@ if(!is_writable(ROOT."/inc/config.php"))
 // What is the current time?
 $timenow = time();
 // Include Functions
-require_once(ROOT . "/inc/functions.php");
+require_once(ROOT."/inc/functions.php");
 // Check the configuration
 require_once(ROOT."/inc/config.php");
 // Define the table prefix
 define("TABLE_PREFIX",$config['table_prefix']);
 // Load the database class
-if(file_exists(ROOT."/inc/{$config['db']['type']}/database.class.php"))
+if(file_exists(ROOT."/inc/{$config['db']['type']}.class.php"))
 {
 	$db_type = $config['db']['type'];
 }
@@ -61,18 +69,13 @@ else
 {
 	$db_type = 'mysql';
 }
-require_once(ROOT."/inc/{$db_type}/database.class.php");
 // Instantiate the class
-$db = new database($config);
-// Generate the core
-require_once(ROOT."/inc/core.class.php");
+$db = new mysql($config);
 // Wake up our pixies.
 $imp = new core;
 unset($config);
 // Setup siteurl
 $siteurl = $imp->settings['siteurl'];
-// Class for controlling permissions
-require_once(ROOT."/inc/permissions.class.php");
 // Check the user's session
 if(!defined("IN_ADMIN"))
 {
@@ -85,8 +88,6 @@ else
 $gid = $imp->user['gid'];
 // Start up the class
 $perms = new permissions($gid);
-// Get the class for dealing with templates
-require_once(ROOT."/inc/templates.class.php");
 // Templates class instantiation.
 $templates = new templates;
 // Get the smarty functions.
@@ -153,19 +154,14 @@ if(empty($avatar))
 	unset($strgroup);
 }
 $smarty->assign('avatar',$avatar);
-//eval("\$header = \"$header\";");
 $header = stripslashes($header);
 $header = str_replace($imp->config['db']['uname'],"Guest",$header);
 unset($username);
 $headerincludes = $templates->fetch("header_includes");
 $headerincludes = addslashes($headerincludes);
-//eval("\$headerincludes = \"$headerincludes\";");
 $headerincludes = stripslashes($headerincludes);
 $footer = $templates->fetch("footer");
 $footer = addslashes($footer);
-//eval("\$footer = \"$footer\";");
-// Now, to start up the gadgets.
-require_once(ROOT."/inc/gadgets.class.php");
 $gadgets = new gadgets;
 class error_class
 {
