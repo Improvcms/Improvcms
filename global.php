@@ -37,14 +37,13 @@ function __autoload ($class)
 	}
 	else
 	{
-		class $class
-		{
-			function __construct()
-			{
-				echo "<b>Something has gone wrong! The class could not be loaded!</b>";
-				exit;
-			}
-		}
+		echo "<b>Something has gone wrong! The file could not be loaded!</b>";
+		exit;
+	}
+	if(!class_exists($class))
+	{
+		echo "<b>Something has gone wrong! The <i>class</i> could not be loaded!</b>";
+		exit;
 	}
 }
 $globstart = microtime(true);
