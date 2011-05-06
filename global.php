@@ -35,12 +35,15 @@ function __autoload ($class)
 	{
 		require_once($file);
 	}
-	class $class
+	else
 	{
-		function __construct()
+		class $class
 		{
-			echo "<b>Something has gone wrong! The class could not be loaded!</b>";
-			exit;
+			function __construct()
+			{
+				echo "<b>Something has gone wrong! The class could not be loaded!</b>";
+				exit;
+			}
 		}
 	}
 }
