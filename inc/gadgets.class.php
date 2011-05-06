@@ -32,9 +32,6 @@ if(!defined("IN_MILLION"))
 
 class gadgets
 {
-	function __construct()
-	{
-	}
 	// Retrieve all of the gadgets.
 	function getgadgets()
 	{
