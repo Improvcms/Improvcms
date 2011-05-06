@@ -100,6 +100,7 @@ $gid = $imp->user['gid'];
 $perms = new permissions($gid);
 // Templates class instantiation.
 $templates = new templates;
+$gadgets = new gadgets;
 // Get the smarty functions.
 require_once(ROOT.'/inc/functions_smarty.php');
 // Get smarty.
@@ -172,7 +173,6 @@ $headerincludes = addslashes($headerincludes);
 $headerincludes = stripslashes($headerincludes);
 $footer = $templates->fetch("footer");
 $footer = addslashes($footer);
-$gadgets = new gadgets;
 class error_class
 {
 	public $seterrors = 0;
