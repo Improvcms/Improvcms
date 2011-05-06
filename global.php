@@ -35,6 +35,14 @@ function __autoload ($class)
 	{
 		require_once($file);
 	}
+	class $class
+	{
+		function __construct()
+		{
+			echo "<b>Something has gone wrong! The class could not be loaded!</b>";
+			exit;
+		}
+	}
 }
 $globstart = microtime(true);
 $loc = 'global.php';
