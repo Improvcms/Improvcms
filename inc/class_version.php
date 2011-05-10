@@ -3,7 +3,7 @@
 ImprovCMS Project
     
     Name: Version Class
-    Description: This file contains methods for determining latest and current version.
+    Description: This file contains version data.
 
     Author: Kyuubi
 
@@ -34,8 +34,8 @@ class version
 	function data()
 	{
 		$latest = "Alpha 3 Development";
-		$lc = "300";
+		$lc = "3";
 		$current = "Alpa 3 Development";
-		$cc = "300";
+		$cc = "3";
 	}
 }
