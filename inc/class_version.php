@@ -24,6 +24,12 @@ ImprovCMS Project
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// Stops unauthorised users accessing this...
+if(!defined("IN_MILLION"))
+{
+	die("Access Denied");
+}
+
 class version
 {
 	public $flatest;
