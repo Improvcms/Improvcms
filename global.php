@@ -53,13 +53,13 @@ $loc = 'global.php';
 // Check if the configuration file exists.
 if (!file_exists(ROOT."/inc/config.php"))
 {	
-	$error->internal(40);
+	die($error->internal(40));
 }
 
 // config.php needs CHMOD 666
 if(!is_writable(ROOT."/inc/config.php"))
 {
-	$error->internal(43);
+	die($error->internal(43));
 	exit;
 }
   
