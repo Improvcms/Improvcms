@@ -41,6 +41,7 @@ function __autoload ($class)
 		require_once($file2);
 	}
 	
+	/*
 	class $class
 	{
 		function __construct()
@@ -49,6 +50,7 @@ function __autoload ($class)
 			exit;
 		}
 	}
+	*/
 }
 
 $error = new error;
