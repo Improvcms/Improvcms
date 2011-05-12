@@ -40,7 +40,6 @@ function __autoload ($class)
 // Instantiate all the classes here.
 $error = new error;
 $gadgets = new gadgets;
-$imp = new core;
 $perms = new permissions($gid);
 $templates = new templates;
 
@@ -78,8 +77,9 @@ else
 	$db_type = 'mysql';
 }
 
-// Database class must be instantiated here.
+// Database and core class must be instantiated here.
 $db = new $db_type($config);
+$imp = new core;
 
 // Unset config variable.
 unset($config);
