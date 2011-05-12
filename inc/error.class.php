@@ -82,6 +82,22 @@ class error
 			echo $html;
 			break;
 			
+			case 43:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>ImprovCMS Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, something went wrong when trying to perform the requested action.<br /><br />Error Code 43: The file config.php does not have the required write permissions. Please CHMOD this file to 666.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			echo $html;
+			break;
+			
 			default:
 			$html = "
 			<div align='center'>
