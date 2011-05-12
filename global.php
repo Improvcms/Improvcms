@@ -31,7 +31,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 function __autoload ($class)
 {
 	$file = ROOT."/inc/".str_replace('_',DIRECTORY_SEPARATOR,$class).'.class.php';
-	$file2 = ROOT."inc/".str_replace('_',DIRECTORY_SEPARATOR,class)_$class'.php';
+	$file2 = ROOT."inc/class_{$class}.php';
 	if(file_exists($file))
 	{
 		require_once($file);
