@@ -37,11 +37,8 @@ function __autoload ($class)
 	}
 }
 
-// Instantiate all the classes here.
+// Instantiate only error class here.
 $error = new error;
-$gadgets = new gadgets;
-$perms = new permissions($gid);
-$templates = new templates;
 
 // Put microtime into a variablie.
 $globstart = microtime(true);
@@ -56,7 +53,6 @@ if (!file_exists(ROOT."/inc/config.php"))
 if(!is_writable(ROOT."/inc/config.php"))
 {
 	die($error->internal(43));
-	exit;
 }
   
 // What is the current time?
@@ -77,9 +73,12 @@ else
 	$db_type = 'mysql';
 }
 
-// Database and core class must be instantiated here.
+// Instantiate the other classes.
 $db = new $db_type($config);
 $imp = new core;
+$gadgets = new gadgets;
+$perms = new permissions($gid);
+$templates = new templates;
 
 // Unset config variable.
 unset($config);
