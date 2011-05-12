@@ -31,27 +31,33 @@ error_reporting(E_ALL ^ E_NOTICE);
 function __autoload ($class)
 {
 	$file = ROOT."/inc/".str_replace('_',DIRECTORY_SEPARATOR,$class).'.class.php';
+	$file2 = ROOT."inc/".str_replace('_',DIRECTORY_SEPARATOR,class)_$class'.php';
 	if(file_exists($file))
 	{
 		require_once($file);
 	}
-	else
+	elseif(file_exists($file2))
 	{
-		echo "<b>Something has gone wrong! The file could not be loaded!</b>";
-		exit;
+		require_once($file2);
 	}
-	if(!class_exists($class))
+	
+	class $class
 	{
-		echo "<b>Something has gone wrong! The <i>class</i> could not be loaded!</b>";
-		exit;
+		function __construct()
+		{
+			echo "<b>Something has gone wrong! The class could not be loaded!</b>";
+			exit;
+		}
 	}
 }
+
+$error = new error;
 $globstart = microtime(true);
 $loc = 'global.php';
 // Check if the configuration file exists.
 if (!file_exists(ROOT."/inc/config.php"))
 {	
-	header("Location: install/");
+	$error->internal(40);
 }
 
 // config.php needs CHMOD 666
@@ -100,7 +106,6 @@ $gid = $imp->user['gid'];
 $perms = new permissions($gid);
 // Templates class instantiation.
 $templates = new templates;
-$gadgets = new gadgets;
 // Get the smarty functions.
 require_once(ROOT.'/inc/functions_smarty.php');
 // Get smarty.
@@ -173,9 +178,5 @@ $headerincludes = addslashes($headerincludes);
 $headerincludes = stripslashes($headerincludes);
 $footer = $templates->fetch("footer");
 $footer = addslashes($footer);
-class error_class
-{
-	public $seterrors = 0;
-}
-$error_class = new error_class;
+$gadgets = new gadgets;
 ?>
