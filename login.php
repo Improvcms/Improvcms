@@ -1,13 +1,13 @@
 <?php
 /*
-MillionCMS Project
+ImprovCMS Project
     
     Name: Login
     Description: Login System
 	Last Update: 02 November 2010
     Author: Polarbear541
 
-    Copyright © 2010 Polarbear541 and MillionCMS Group
+    Copyright © 2010 Polarbear541 and ImprovCMS Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -71,7 +71,7 @@ case "profile":
 	echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 	<html xmlns='http://www.w3.org/1999/xhtml'>
 	<head>
-	<title>MillionCMS - Edit Profile</title>
+	<title>ImprovCMS - Edit Profile</title>
 	<meta http-equiv='Content-Language' content='English' />
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 	<link rel='stylesheet' type='text/css' href='style.css' media='screen' />
@@ -91,7 +91,7 @@ case "edit_profile":
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<title>MillionCMS - Edit Profile</title>
+	<title>ImprovCMS - Edit Profile</title>
 	<meta http-equiv="Content-Language" content="English" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
@@ -200,7 +200,7 @@ case "register":
 	echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 	<html xmlns='http://www.w3.org/1999/xhtml'>
 	<head>
-	<title>MillionCMS - Register</title>
+	<title>ImprovCMS - Register</title>
 	<meta http-equiv='Content-Language' content='English' />
 	<link rel='stylesheet' type='text/css' href='style.css' media='screen' />";
 	$smarty->display("db:header_includes");
@@ -222,7 +222,7 @@ case "do_register":
 	echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 	<html xmlns='http://www.w3.org/1999/xhtml'>
 	<head>
-	<title>MillionCMS - Register</title>
+	<title>ImprovCMS - Register</title>
 	<meta http-equiv='Content-Language' content='English' />
 	<link rel='stylesheet' type='text/css' href='style.css' media='screen' />";
 	$smarty->display("db:header_includes");
@@ -285,9 +285,9 @@ case "do_register":
 	Email: {$email}
 	Activation Key: {$activationkey}
 
-	Thanks, MillionCMS Team.";
+	Thanks, ImprovCMS Team.";
 		$from = $settings['sendmail'];
-		$subject = "Account Activation for MillionCMS";
+		$subject = "Account Activation for ImprovCMS";
 				
 		mail($email, $subject, $message, "From: {$from}");
 		echo "Thank you for registering. An email has been sent with an activation key, please check your email to complete registration. <br />";
@@ -302,7 +302,7 @@ case "activate":
 	echo "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
 	<html xmlns='http://www.w3.org/1999/xhtml'>
 	<head>
-	<title>MillionCMS - Activate Account</title>
+	<title>ImprovCMS - Activate Account</title>
 	<meta http-equiv='Content-Language' content='English' />";
 	$smarty->display("db:header_includes");
 	echo "<link rel='stylesheet' type='text/css' href='style.css' media='screen' />
@@ -360,9 +360,9 @@ case "lostpw":
 			
 			{$_SERVER['HTTP_HOST']}/login.php?action=do_lostpw&email={$email}&user={$username}&key={$key}
 			
-			Thanks, MillionCMS Team.";
+			Thanks, ImprovCMS Team.";
 			$from = $settings['sendmail'];
-			$subject = "Password Reset for {$username} on MillionCMS";
+			$subject = "Password Reset for {$username} on ImprovCMS";
 			mail($email, $subject, $message, "From: {$from}");
 			$sysmess = "An email has been sent to; {$email} along with instructions on how to reset your password.<br />";
 		}
@@ -380,7 +380,7 @@ case "do_lostpw":
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-	<title>MillionCMS - Lost Password</title>
+	<title>ImprovCMS - Lost Password</title>
 	<meta http-equiv="Content-Language" content="English" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />';
@@ -408,9 +408,9 @@ case "do_lostpw":
 
 	Your password has been successfully reset upon your request. Your new password is: {$pass}
 
-	Thanks, MillionCMS Team.";
+	Thanks, ImprovCMS Team.";
 		$from = $settings['sendmail'];
-		$subject = "Password Reset for {$username} on MillionCMS";
+		$subject = "Password Reset for {$username} on ImprovCMS";
 		
 		mail($email, $subject, $message, "From: {$from}");
 		
@@ -424,7 +424,7 @@ break;
 case "logout":
 	// Eat the cookies
 	setcookie("millionsession","",time()-3600);
-	setcookie("mcmsuid","",time()-3600);
+	setcookie("impuid","",time()-3600);
 	// Remove the session.
 	$db->query("UPDATE ".TABLE_PREFIX."users SET session='0' WHERE uid='{$imp->user['uid']}'");
 	// Redirect to the index page.
@@ -461,7 +461,7 @@ case "do_login":
 		$session = random_str(10);
 		$end = time()+60*60*24*31;
 		setcookie("millionsession","{$session}",$end,"/");
-		setcookie("mcmsuid",$row2['uid'],$end,"/");
+		setcookie("impuid",$row2['uid'],$end,"/");
 		$db->query("UPDATE ".TABLE_PREFIX."users SET session='{$session}' WHERE uid='{$row2['uid']}'");
 		redirect("./index.php");
 	}
