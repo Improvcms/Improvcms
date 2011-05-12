@@ -31,17 +31,10 @@ error_reporting(E_ALL ^ E_NOTICE);
 function __autoload ($class)
 {
 	$file = ROOT."/inc/".str_replace('_',DIRECTORY_SEPARATOR,$class).'.class.php';
-	$file2 = ROOT."inc/class_{$class}.php";
 	if(file_exists($file))
 	{
 		require_once($file);
 	}
-	elseif(file_exists($file2))
-	{
-		require_once($file2);
-	}
-	
-	/*
 	class $class
 	{
 		function __construct()
@@ -50,7 +43,6 @@ function __autoload ($class)
 			exit;
 		}
 	}
-	*/
 }
 
 $error = new error;
