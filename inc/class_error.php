@@ -49,6 +49,7 @@ class error
 				</table>
 			</div>";
 			echo $html;
+			break;
 			
 			case 41:
 			$html = "
@@ -63,6 +64,7 @@ class error
 				</table>
 			</div>";
 			echo $html;
+			break;
 			
 			case 42:
 			$html = "
@@ -78,6 +80,7 @@ class error
 			</div>
 			";
 			echo $html;
+			break;
 			
 			default:
 			$html = "
@@ -92,6 +95,7 @@ class error
 				</table>
 			</div>
 			";
+			break;
 		}
 	}
 }
