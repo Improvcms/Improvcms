@@ -49,6 +49,7 @@ class error
 				</table>
 			</div>";
 			echo $html;
+			exit;
 			break;
 			
 			case 41:
