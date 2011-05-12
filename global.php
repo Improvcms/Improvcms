@@ -35,19 +35,17 @@ function __autoload ($class)
 	{
 		require_once($file);
 	}
-	/*
-	class $class
-	{
-		function __construct()
-		{
-			echo "<b>Something has gone wrong! The class could not be loaded!</b>";
-			exit;
-		}
-	}
-	*/
 }
 
+// Instantiate all the classes here.
 $error = new error;
+$gadgets = new gadgets;
+$db = new $db_type($config);
+$imp = new core;
+$perms = new permissions($gid);
+$templates = new templates;
+
+// Put microtime into a variablie.
 $globstart = microtime(true);
 $loc = 'global.php';
 // Check if the configuration file exists.
@@ -80,10 +78,8 @@ else
 {
 	$db_type = 'mysql';
 }
-// Instantiate the class
-$db = new $db_type($config);
-// Wake up our pixies.
-$imp = new core;
+
+// Unset config variable.
 unset($config);
 // Setup siteurl
 $siteurl = $imp->settings['siteurl'];
@@ -97,10 +93,7 @@ else
 	check_adminsession();
 }
 $gid = $imp->user['gid'];
-// Start up the class
-$perms = new permissions($gid);
-// Templates class instantiation.
-$templates = new templates;
+
 // Get the smarty functions.
 require_once(ROOT.'/inc/functions_smarty.php');
 // Get smarty.
@@ -173,5 +166,4 @@ $headerincludes = addslashes($headerincludes);
 $headerincludes = stripslashes($headerincludes);
 $footer = $templates->fetch("footer");
 $footer = addslashes($footer);
-$gadgets = new gadgets;
 ?>
