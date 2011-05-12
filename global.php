@@ -59,8 +59,7 @@ if (!file_exists(ROOT."/inc/config.php"))
 // config.php needs CHMOD 666
 if(!is_writable(ROOT."/inc/config.php"))
 {
-	require(ROOT."/styles/default.css");
-	error("config.php does not have 666 CHMOD permissions. ImprovCMS cannot run.");
+	$error->internal(43);
 	exit;
 }
   
