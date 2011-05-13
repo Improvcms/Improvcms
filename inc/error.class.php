@@ -98,6 +98,22 @@ class error
 			echo $html;
 			break;
 			
+			case 44:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>ImprovCMS Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, something went wrong when trying to perform the requested action.<br /><br />Error Code 44: You are not accessing this file in the proper manner. Please go back and try to access this page properly.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			echo $html;
+			break;
+			
 			default:
 			$html = "
 			<div align='center'>
@@ -107,6 +123,27 @@ class error
 					</tr>
 					<tr>
 						<td>Sorry, something went wrong when trying to perform the requested action.<br /><br />An unknown error has occurred: please post in the Official Support forums for further assistance.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+		}
+	}
+	
+	function perms($errcode)
+	{
+		switch($errcode)
+		{
+			case 20:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>System Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, you are not an administrator and therefore cannot access the Administrator Control Panel.</td>
 					</tr>
 				</table>
 			</div>
