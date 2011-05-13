@@ -186,6 +186,22 @@ class error
 			";
 			break;
 			
+			case 63:
+			$my_err = mysql_error();
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Database Error</td>
+					</tr>
+					<tr>
+						<td>A database error has occured and the software has stopped.<br /><br />Error Code 63: {$my_err}</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
 			default:
 			$html = "
 			<div align='center'>
