@@ -54,7 +54,7 @@ class mysql
 	// This function executes queries on the database
 	function query($query)
 	{
-		$query1 = mysql_query($query, $this->con) or trigger_error(mysql_error($this->con).'<br />You used this query: '.$query,E_USER_ERROR);
+		$query1 = mysql_query($query, $this->con) or die($error->database(63));
 		$this->queries = $this->queries+1;
 		return $query1;
 	}
