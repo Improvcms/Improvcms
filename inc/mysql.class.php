@@ -54,6 +54,7 @@ class mysql
 	// This function executes queries on the database
 	function query($query)
 	{
+		global $error;
 		$query1 = mysql_query($query, $this->con) or die($error->database(63));
 		$this->queries = $this->queries+1;
 		return $query1;
