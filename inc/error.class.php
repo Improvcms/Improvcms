@@ -218,5 +218,86 @@ class error
 			break;
 		}
 	}
+	
+	function template($errcode)
+	{
+		switch($errcode)
+		{
+			case 100:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Template Error</td>
+					</tr>
+					<tr>
+						<td>An error has occurred with an ImprovCMS template.<br /><br />Error Code 100: The template does not exist. For instructions on how to restore missing templates, please check the Official Support Forums.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			case 101:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Template Error</td>
+					</tr>
+					<tr>
+						<td>An error has occurred with an ImprovCMS template.<br /><br />Error Code 101: You did not specify which template should be fetched by the Template Class.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			case 102:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Template Error</td>
+					</tr>
+					<tr>
+						<td>An error has occurred with an ImprovCMS template.<br /><br />Error Code 102: The template you were trying to fetch is invalid. Please go back and check that the template contains valid code.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			case 103:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Template Error</td>
+					</tr>
+					<tr>
+						<td>An error has occurred with an ImprovCMS template.<br /><br />Error Code 103: You are trying to create a template that already exists. Please go back and rename your template and try again</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			default:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Template Error</td>
+					</tr>
+					<tr>
+						<td>An unknown error has occurred with the ImprovCMS template system. This could be due to the database being corrupted or the template class not existing. Please post a thread on the Official Support Forums for further assistance.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+		}
+	}
 }
 ?>

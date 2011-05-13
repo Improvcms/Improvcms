@@ -1,11 +1,12 @@
 <?php
 /*
-MillionCMS Project
+	ImprovCMS Project
 
 	Name: Templates Class
 	Description: This class deals with fetching templates.
-	Last Update: 09 October 2010
+	Last Update: 13 May 2011
 	Author: Azareal
+	Updated by: Kyuubi
 
 
 	Copyright © 2010 Azareal and MillionCMS Group
@@ -24,11 +25,13 @@ MillionCMS Project
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 // Stops unauthorised users accessing this
 if(!defined("IN_MILLION"))
 {
 	die("Access Denied");
 }
+
 class templates
 {
 	public $templates;
@@ -93,7 +96,8 @@ class templates
 	{
 		if ($template==null)
 		{
-			trigger_error("You have not specified which template to fetch",E_USER_WARNING);
+			global $error;
+			$error->template(101);
 			return false;
 		}
 		if(isset($this->templates[$template]))
@@ -102,7 +106,7 @@ class templates
 		}
 		else
 		{
-			trigger_error("Invalid Template!",E_USER_WARNING);
+			$error->template(102);
 			return false;
 		}
 	}
@@ -110,7 +114,8 @@ class templates
 	{
 		if ($template==null)
 		{
-			trigger_error("You have not specified which template to fetch",E_USER_WARNING);
+			global $error;
+			$error->template(101);
 			return false;
 		}
 		if(isset($this->admintemplates[$template]))
@@ -119,7 +124,7 @@ class templates
 		}
 		else
 		{
-			trigger_error("Invalid Template!",E_USER_WARNING);
+			$error->template(102);
 			return false;
 		}
 	}
@@ -133,12 +138,12 @@ class templates
 	// Creating a new template
 	function add($name,$content)
 	{
-		global $db;
+		global $db, $error;
 		$test = $db->query("SELECT * FROM ".TABLE_PREFIX."templates WHERE name='{$name}'");
 		$count = $db->num($test);
 		if($count!=0)
 		{
-			trigger_error("That template already exists",E_USER_WARNING);
+			$error->template(103);
 			return false;
 		}
 		$db->query("INSERT INTO ".TABLE_PREFIX."templates (name,content) VALUES ('{$name}','{$content}') ");
@@ -148,12 +153,12 @@ class templates
 	// Removing/deleting an existing template
 	function remove($name,$templateset = null)
 	{
-		global $db;
+		global $db, $error;
 		$test = $db->query("SELECT * FROM templates WHERE name='{$name}'");
 		$count = $db->num($test);
 		if(empty($count))
 		{
-			trigger_error("This template does not exist",E_USER_WARNING);
+			$error->template(100);
 			return false;
 		}
 		$db->query("DELETE FROM ".TABLE_PREFIX."templates WHERE name='{$name}'");
@@ -163,12 +168,12 @@ class templates
 	// Updating the contents of an existing template
 	function update($name,$content)
 	{
-		global $db;
+		global $db, $error;
 		$test = $db->query("SELECT * FROM templates WHERE name='{$name}'");
 		$count = $db->num($test);
 		if(empty($count))
 		{
-			trigger_error("This template does not exist",E_USER_WARNING);
+			$error->template(100);
 			return false;
 		}
 		$db->query("UPDATE ".TABLE_PREFIX."templates SET content='{$content}' WHERE name='{$name}'");
