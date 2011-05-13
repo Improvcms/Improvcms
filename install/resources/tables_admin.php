@@ -362,7 +362,7 @@ VALUES
             <img align=\"absmiddle\" src=\"images/loader_bar.gif\"><br />&nbsp;Processing your Request...
           </div>
         </div>
-  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"ImprovCMS\" width=\"312\" height=\"200\" /></a><br /></center>
+  <center><a href=\"{\$imp->settings.homeurl}\"><img src=\"images/logo.png\" alt=\"ImprovCMS\" width=\"312\" height=\"600\" /></a><br /></center>
     <div id=\"copyright\" align=\"center\"><span style=\"color:#FFF; margin:3px 0;\">Copyright&copy; 2010 ImprovCMS - <a href=\"http://ImprovCMS.com\">Home Page</a> - <a href=\"http://ImprovCMS.com/forums\">Support</a></span></div>
     </div>        
 </div>
