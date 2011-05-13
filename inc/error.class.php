@@ -140,10 +140,61 @@ class error
 			<div align='center'>
 				<table border='1'>
 					<tr>
-						<td>System Error</td>
+						<td>Permissions Error</td>
 					</tr>
 					<tr>
 						<td>Sorry, you are not an administrator and therefore cannot access the Administrator Control Panel.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+		}
+	}
+	
+	function database($errcode)
+	{
+		switch($errcode)
+		{
+			case 60:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Database Error</td>
+					</tr>
+					<tr>
+						<td>A database error has occured and the software has stopped.<br /><br />Error Code 60: The MySQL server is down or not responding. Please contact your host.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			case 61:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Database Error</td>
+					</tr>
+					<tr>
+						<td>A database error has occured and the software has stopped.<br /><br />Error Code 61: ImprovCMS cannot connect to your database, either due to a problem in ./inc/config.php or incorrect permissions on the database. Please correct these, and try again.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			break;
+			
+			default:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Database Error</td>
+					</tr>
+					<tr>
+						<td>An unknown error has occurred in your database. This could be a result of database corruption,<br />or an unexpected condition was met. Please post a thread in our official support forums for further assistance.</td>
 					</tr>
 				</table>
 			</div>
