@@ -45,7 +45,8 @@ class mysql
 	// Connects to the MySQL Server
 	function connect()
 	{
-		$this->con = mysql_connect($this->db['host'],$this->db['uname'],$this->db['pass']);
+		global $error;
+		$this->con = mysql_connect($this->db['host'],$this->db['uname'],$this->db['pass']) or die($error->database(61));
 	}
 	function select()
 	{
