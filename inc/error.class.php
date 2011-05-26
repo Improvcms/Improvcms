@@ -300,7 +300,7 @@ class error
 						<td>Template Error</td>
 					</tr>
 					<tr>
-						<td>An unknown error has occurred with the ImprovCMS template system. This could be due to the database being corrupted or the template class not existing. Please post a thread on the Official Support Forums for further assistance.</td>
+						<td>An unknown error has occurred with the ImprovCMS template system. This could be due to the database being corrupted or the<br />template class not existing. Please post a thread on the Official Support Forums for further assistance.</td>
 					</tr>
 				</table>
 			</div>
