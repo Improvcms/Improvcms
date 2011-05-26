@@ -176,8 +176,8 @@ class error
 						<td>Account Banned</td>
 					</tr>
 					<tr>
-						<td>Sorry, the moderation team of this website has banned your account.<br /><br />Ban Reason: {$reason}<br />Ban Expiry: {$expiry}.<br /><br />
-						If you are not sure why you have been banned or believe you are receiving this message in error, please contact the site administrators.
+						<td>Sorry, the moderation team of this website has banned your account.<br /><br />Ban Reason: {$reason}<br />Ban Expiry: {$expiry}<br /><br />
+						If you are not sure why you have been banned or believe you are receiving this message in error,<br />please contact the site administrators.
 						</td>
 					</tr>
 				</table>
