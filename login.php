@@ -25,7 +25,7 @@ ImprovCMS Project
 */
 
 // Yes, this is a front-end file not an include.
-define("IN_MILLION","1");
+define("IN_IMPROV","1");
 
 // Pixie Stuff
 require_once("./global.php");

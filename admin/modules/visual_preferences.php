@@ -24,7 +24,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 //Require the Global Loader
-define("IN_MILLION", "1");
+define("IN_IMPROV", "1");
 define("IN_ADMIN","1");
 require_once('../../global.php');
 // Before the user can do anything here, check if the user is actually an administrator

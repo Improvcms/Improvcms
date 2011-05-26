@@ -25,7 +25,7 @@ ImprovCMS Project
 */
 
 // Define Important Constants
-define("IN_MILLION", "1");
+define("IN_IMPROV", "1");
 define("IN_ADMIN","1");
 
 // Need to include the global.php

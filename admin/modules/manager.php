@@ -29,7 +29,7 @@
 */
 
 // Require Global
-define("IN_MILLION", "1");
+define("IN_IMPROV", "1");
 define("IN_ADMIN","1");
 require_once('../../global.php');
 require_once('./include/functions.php');

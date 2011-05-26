@@ -25,7 +25,7 @@ MillionCMS Project
 */
 
 // Yes, this is a front-end file not an include.
-define("IN_MILLION","1");
+define("IN_IMPROV","1");
 
 // This is where the magic begins with the pixies
 require_once("./global.php");

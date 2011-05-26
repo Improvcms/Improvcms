@@ -31,7 +31,7 @@
 $loc = 'create.php';
 
 // Yes, this is a front-end file not an include.
-define("IN_MILLION","1");
+define("IN_IMPROV","1");
 
 // Include Important Scripts
 require("global.php");

@@ -25,7 +25,7 @@ MillionCMS Project
 */
 
 define("THIS_SCRIPT","contact.php");
-define("IN_MILLION","1");
+define("IN_IMPROV","1");
 require("global.php");
 $loc = 'contact.php';
 

@@ -1,6 +1,6 @@
 <?php
 //Require the Global Loader
-define("IN_MILLION","1");
+define("IN_IMPROV","1");
 define("IN_ADMIN","1");
 require_once('../global.php');
 if ($perms->check_perms("can_access_admincp") && $_GET['loggedin']!='1') 

@@ -25,7 +25,7 @@ MillionCMS Project
 */
 
 // Stops unauthorised users accessing this
-if(!defined("IN_MILLION"))
+if(!defined("IN_IMPROV"))
 {
 	die("Access Denied");
 }

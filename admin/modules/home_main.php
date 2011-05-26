@@ -27,7 +27,7 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 // Define Important Constants
-define("IN_MILLION", "1");
+define("IN_IMPROV", "1");
 define("IN_ADMIN","1");
 // Need to include certain files.
 require("./include/functions.php");
