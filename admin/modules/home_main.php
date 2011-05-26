@@ -1,6 +1,6 @@
 <?php
 /*
-	MillionCMS Project
+	ImprovCMS Project
 
 	Name: AdminCP Home
 	Version: Development
@@ -10,7 +10,7 @@
 	Author: Damian, Kyuubi, Azareal.
 
 
-	Copyright Damian, Kyuubi, Azareal + MillionCMS Group © 2010
+	Copyright Damian, Kyuubi, Azareal + Improv Software Group © 2010
 
 
 	This program is free software: you can redistribute it and/or modify
@@ -33,11 +33,9 @@ define("IN_ADMIN","1");
 require("./include/functions.php");
 require_once('../../global.php');
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin)
+if(!$is_admin) 
 {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+	die($error->perms(20));
 }
 // Admin Note's
 if(!empty($_POST['admin_notes']))
@@ -74,7 +72,7 @@ $anotes = get_cache('admin_notes');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Admin Home | MillionCMS ACP</title>
+<title>Admin Home | ImprovCMS ACP</title>
 <link media="screen" rel="stylesheet" type="text/css" href="../css/admin.css" />
 <script type="text/javascript" src="../js/behaviour.js"></script>
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>

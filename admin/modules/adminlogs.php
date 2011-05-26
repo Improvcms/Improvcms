@@ -4,16 +4,13 @@ define("IN_MILLION", "1");
 define("IN_ADMIN","1");
 require_once('../../global.php');
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin) {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+if(!$is_admin) 
+{
+	die($error->perms(20));
 }
 elseif(!$perms->check_perms("admin:can_view_adminlogs"))
 {
-	error("You do not have the required admin permission to view this page, 
-	If you believe this message is in error then, contact a super administrator");
-	exit;
+	die($error->perms(21));
 }
 // Include the Admin Control Panel Functions
 include("./include/functions.php");
@@ -29,7 +26,7 @@ if($_GET['do']=='undo')
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Administrator Logs | MillionCMS ACP</title>
+<title>Administrator Logs | ImprovCMS ACP</title>
 <link media="screen" rel="stylesheet" type="text/css" href="../css/admin.css" />
 <script type="text/javascript" src="../js/behaviour.js"></script>
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
@@ -40,12 +37,12 @@ if($_GET['do']=='undo')
 <div id="wrapper">
 	<div id="head">
     	<div id="logo_user_details">
-        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name'] ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
+        	<span id="logo" style="color:#0CF; font-size:42px; margin-top:10px;"><?php echo $imp->settings['site_name']; ?><br /><span style=" color:#999; font-size:20px; float:right;">Administration Panel</span></span>
         <div id="user_details">
 
         <ul id="user_details_menu">
         	<br />
-			<li>Welcome <strong><?php echo $imp->user['username'] ?></strong></li>
+			<li>Welcome <strong><?php echo $imp->user['username']; ?></strong></li>
 				<li>
 					<ul id="user_access">
 						<li class="first"><a href="../../index.php">Return to Home</a></li>
@@ -129,10 +126,10 @@ if($_GET['do']=='undo')
 								$globend = microtime(true);
 								$globtime = $globend - $globstart;
 							?>
-                    	<strong>MillionCMS</strong><br />
+                    	<strong>ImprovCMS</strong><br />
                         Copyright &copy; 2010<br /><br />                        
-                        Script executed in <?php echo $globtime ?>s<br />
-                        <?php echo $db->queries ?> SQL queries used<br /><br />
+                        Script executed in <?php echo $globtime; ?>s<br />
+                        <?php echo $db->queries; ?> SQL queries used<br /><br />
                         Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>

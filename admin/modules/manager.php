@@ -1,17 +1,17 @@
 <?php
 /*
-	MillionCMS Project
+	ImprovCMS Project
     
-	Name: Million Manager
+	Name: Improv Manager
 	Version: Development
-	Description: One file that contains all the data for each Million 
+	Description: One file that contains all the data for each Improv 
 	Manager page.
 	Last Update: Never
 
 	Author: Kyuubi (modified by Azareal)
 
 
-	Copyright Kyuubi, Azareal and the MillionCMS Group (C) 2010
+	Copyright Kyuubi, Azareal and the Improv Software Group (C) 2010
 
 
 	This program is free software: you can redistribute it and/or modify
@@ -34,10 +34,9 @@ define("IN_ADMIN","1");
 require_once('../../global.php');
 require_once('./include/functions.php');
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin) {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+if(!$is_admin) 
+{
+	die($error->perms(20));
 }
 if(isset($_POST['cleartcache']))
 {

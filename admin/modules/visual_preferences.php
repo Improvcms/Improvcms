@@ -1,13 +1,13 @@
 <?php
 /*
-MillionCMS Project
+	ImprovCMS Project
     
     Name: Visual Preferences
     Description: Controls the visual preferences in the admincp.
 	
     Author: Azareal and Damian
 
-    Copyright © 2010 Azareal, Damian and the MillionCMS Group
+    Copyright © 2010 Azareal, Damian and the Improv Software Group
 	All Rights Reserved
 
     This program is free software: you can redistribute it and/or modify
@@ -28,11 +28,9 @@ define("IN_MILLION", "1");
 define("IN_ADMIN","1");
 require_once('../../global.php');
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin)
+if(!$is_admin) 
 {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+	die($error->perms(20));
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -4,10 +4,9 @@ define("IN_MILLION", "1");
 define("IN_ADMIN","1");
 require_once('../../global.php');
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin) {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+if(!$is_admin) 
+{
+	die($error->perms(20));
 }
 if(isset($_POST['perfaction']))
 {
@@ -59,7 +58,7 @@ elseif(isset($_POST['switch']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Gadgets | MillionCMS ACP</title>
+<title>Gadgets | ImprovCMS ACP</title>
 <link media="screen" rel="stylesheet" type="text/css" href="../css/admin.css" />
 <script type="text/javascript" src="../js/behaviour.js"></script>
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>

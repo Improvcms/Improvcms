@@ -1,6 +1,6 @@
 <?php
 /*
-	MillionCMS Project
+	ImprovCMS Project
 
 	Name: AdminCP Home
 	Version: Development
@@ -10,7 +10,7 @@
 	Author: Damian, Kyuubi, Azareal.
 
 
-	Copyright Damian, Kyuubi, Azareal + MillionCMS Group © 2010
+	Copyright Damian, Kyuubi, Azareal + Improv Software Group © 2010
 
 
 	This program is free software: you can redistribute it and/or modify
@@ -36,10 +36,9 @@ require("./include/functions.php");
 require_once('../../global.php');
 
 // Before the user can do anything here, check if the user is actually an administrator
-if (!$is_admin) {
-	error("You do not have permission to view this page.");
-	redirect("../index.php");
-	exit;
+if(!$is_admin) 
+{
+	die($error->perms(20));
 }
 // Admin Note's
 if(!empty($_POST['admin_notes']))
@@ -76,7 +75,7 @@ $anotes = get_cache('admin_notes');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Admin Options | MillionCMS ACP</title>
+<title>Admin Options | ImprovCMS ACP</title>
 <link media="screen" rel="stylesheet" type="text/css" href="../css/admin.css" />
 <script type="text/javascript" src="../js/behaviour.js"></script>
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
@@ -160,7 +159,7 @@ $anotes = get_cache('admin_notes');
                         <h2>Admin Help</h2>
                     </div>                
                     <div class="contentbox">
-                    	This page (Admin Option's) allows you to set up general settings that effect either only you, or all admin user's. When editing these feilds, please not that they are already set at recommended levels an by changing them, may cause security issues.
+                    	This page (Admin Option's) allows you to set up general settings that effect either only you, or all admin user's. When editing these fields, please note that they are already set at recommended levels and by changing them, may cause security issues.
                     </div>
                 </div>
                 
@@ -170,10 +169,10 @@ $anotes = get_cache('admin_notes');
 								$globend = microtime(true);
 								$globtime = $globend - $globstart;
 							?>
-                    	<strong>MillionCMS</strong><br />
+                    	<strong>ImprovCMS</strong><br />
                         Copyright &copy; 2010<br /><br />                        
-                        Script executed in <?php echo $globtime ?>s<br />
-                        <?php echo $db->queries ?> SQL queries used<br /><br />
+                        Script executed in <?php echo $globtime; ?>s<br />
+                        <?php echo $db->queries; ?> SQL queries used<br /><br />
                         Version: <?php echo $imp->fversion; ?><br />
                         <strong>Development Stage</strong>
                     </div>
