@@ -54,7 +54,13 @@ if(!is_writable(ROOT."/inc/config.php"))
 {
 	die($error->internal(43));
 }
-  
+ 
+// Has the user been banned?
+if($banned == 4)
+{
+	die($error->perms(40));
+}
+
 // What is the current time?
 $timenow = time();
 // Include Functions

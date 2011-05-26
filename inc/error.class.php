@@ -151,6 +151,40 @@ class error
 			";
 			echo $html;
 			break;
+			
+			case 21:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Permissions Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, the Lead Administrator of this website has chosen not to give you access to this page.<br />If you believe you should have access, please contact the webmaster/owner of this site.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			echo $html;
+			break;
+			
+			case 40:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Account Banned</td>
+					</tr>
+					<tr>
+						<td>Sorry, the moderation team of this website has banned your account.<br /><br />Ban Reason: {$reason}<br />Ban Expiry: {$expiry}.<br /><br />
+						If you are not sure why you have been banned or believe you are receiving this message in error, please contact the site administrators.
+						</td>
+					</tr>
+				</table>
+			</div>
+			";
+			echo $html;
+			break;
 		}
 	}
 	
