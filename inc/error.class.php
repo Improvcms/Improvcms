@@ -127,6 +127,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 		}
 	}
@@ -148,6 +149,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 		}
 	}
@@ -169,6 +171,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			case 61:
@@ -184,6 +187,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			case 63:
@@ -200,6 +204,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			default:
@@ -215,6 +220,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 		}
 	}
@@ -236,6 +242,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			case 101:
@@ -251,6 +258,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			case 102:
@@ -281,6 +289,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 			
 			default:
@@ -296,6 +305,7 @@ class error
 				</table>
 			</div>
 			";
+			echo $html;
 			break;
 		}
 	}
