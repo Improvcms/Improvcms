@@ -168,6 +168,22 @@ class error
 			echo $html;
 			break;
 			
+			case 22:
+			$html = "
+			<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Permissions Error</td>
+					</tr>
+					<tr>
+						<td>Sorry, you don't have permission to access the contents of this page.</td>
+					</tr>
+				</table>
+			</div>
+			";
+			echo $html;
+			break;
+			
 			case 40:
 			$html = "
 			<div align='center'>
