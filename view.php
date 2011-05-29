@@ -33,7 +33,7 @@ $loc = 'view.php';
 // Before the user can do anything here, check if they can actually view pages
 if(!$perms->check_perms("can_view_pages"))
 {
-	error("You do not have permission to view this page");
+	$error->perms(22);
 	exit;
 }
 // Convert the page id into an integer for security reasons.
@@ -70,7 +70,7 @@ elseif($_GET['uid'] || $_GET['user'])
 		$uid = getuid($db->sanitise($_GET['user']));
 		if(!$uid)
 		{
-			error("This user does not exist");
+			$lang->read("The specified user does not exist");
 			exit;
 		}
 		$uname = $_GET['user'];
@@ -81,7 +81,7 @@ elseif($_GET['uid'] || $_GET['user'])
 		$uname = getname($uid);
 		if($uname=='Guest')
 		{
-			error("This user does not exist");
+			$lang->read("The specified user does not exist");
 			exit;
 		}
 	}
@@ -159,20 +159,18 @@ elseif($_REQUEST['action']=='report')
 		$count = $db->num($query);
 		if($count=='0')
 		{
-			error("This page does not exist");
+			$lang->read("The specified page does not exist");
 			exit;
 		}
 		$page = $db->fetch_array($query);
 		if($page['status']=='5' && !$perms->check_perms("can_view_deleted_pages"))
 		{
-			error("This page does not exist");
+			$lang->read("The specified page does not exist");
 			exit;
 		}
 		elseif($page['title']=='index')
 		{
-			header("Location: index.php");
-			error("You may not directly navigate to this page, please visit index.php");
-			exit;
+			die($error->internal(44));
 		}
 		$sidebar = $gadgets->retrieve_sidebar('left');
 		$pntitle = $page['nicetitle'];
@@ -229,7 +227,7 @@ elseif($_REQUEST['action']=='report')
 					$cdelete = $articles->delete_comment($_REQUEST['delcid']);
 					if(!$cdelete)
 					{
-						error("Something went wrong!");
+						$lang->read("The specified comment could not be deleted.");
 					}
 				}
 				elseif(isset($_POST['uccontent']))
@@ -237,7 +235,7 @@ elseif($_REQUEST['action']=='report')
 					$update = $articles->update_comment($_POST['cid'],$_POST['uccontent']);
 					if(!$update)
 					{
-						error("Something went wrong!");
+						$lang->read("The specified comment could not be updated.");
 					}
 				}
 				$mcontent .= $articles->generate_comments($page['pid']);
@@ -291,8 +289,7 @@ elseif($_REQUEST['action']=='report')
 	}
 	else
 	{
-		error("You do not have permission to view this page");
-		exit;
+		die($error->perms(22));
 	}
 }
 elseif($_REQUEST['do']=='report')
@@ -313,7 +310,7 @@ elseif($_REQUEST['do']=='report')
 		$check = $db->num($test);
 		if($check!='1')
 		{
-			error("The page does not exist");
+			$lang->read("The specified page does not exist.");
 			exit;
 		}
 		$query = $db->query("SELECT * FROM ".TABLE_PREFIX."reports WHERE pid='{$pid}'");
@@ -321,26 +318,25 @@ elseif($_REQUEST['do']=='report')
 		if($count!='0')
 		{
 			$report = false;
-			echo 'This page has already been reported';
+			$lang->read("This page has already been reported by another user.");
 		}
 		if($report!=false)
 		{
 			if(empty($_REQUEST['content']))
 			{
-				error("No content specified");
+				$lang->read("You have not left a comment for the staff so they know why this page has been reported.");
 				exit;
 			}
 			$db->query("INSERT INTO ".TABLE_PREFIX."reports (pid,content,uid,status) VALUES ('{$pid}','{$content}','{$imp->user['uid']}',0) ");
-			echo 'The page has successfully been reported';
+			$lang->read("This page has been reported successfully.");
 			exit;
 		}
-		error("Something went wrong!");
+		$lang->read("An unknown error has occured.");
 		exit;
 	}
 	else
 	{
-		error("You do not have permission to view this page");
-		exit;
+		die($error->perms(22));
 	}
 }
 elseif(!empty($pid) || !empty($title))
@@ -358,20 +354,18 @@ elseif(!empty($pid) || !empty($title))
 	$count = $db->num($query);
 	if($count=='0')
 	{
-		error("This page does not exist");
+		$lang->read("The specified page does not exist.");
 		exit;
 	}
 	$page = $db->fetch_array($query);
 	if($page['status']=='5' && !$perms->check_perms("can_view_deleted_pages"))
 	{
-		error("This page does not exist");
+		$lang->read("The specified page does not exist.");
 		exit;
 	}
 	elseif($page['title']=='index')
 	{
-		header("Location: index.php");
-		error("You may not directly navigate to this page, please visit index.php");
-		exit;
+		die($error->internal(44));
 	}
 	$sidebar = $gadgets->retrieve_sidebar('left');
 	$pntitle = $page['nicetitle'];
@@ -433,7 +427,7 @@ elseif(!empty($pid) || !empty($title))
 				$cdelete = $articles->delete_comment($_REQUEST['delcid']);
 				if(!$cdelete)
 				{
-					error("Something went wrong!");
+					$lang->read("The specified comment could not be deleted.");
 				}
 			}
 			elseif(isset($_POST['uccontent']))
@@ -441,7 +435,7 @@ elseif(!empty($pid) || !empty($title))
 				$update = $articles->update_comment($_POST['cid'],$_POST['uccontent']);
 				if(!$update)
 				{
-					error("Something went wrong!");
+					$lang->read("The specified comment could not be updated.");
 				}
 			}
 			if(!empty($title))

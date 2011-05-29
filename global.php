@@ -85,6 +85,7 @@ $imp = new core;
 $gadgets = new gadgets;
 $perms = new permissions($gid);
 $templates = new templates;
+$lang = new language;
 
 // Unset config variable.
 unset($config);

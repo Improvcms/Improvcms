@@ -32,9 +32,21 @@ if(!defined("IN_IMPROV"))
 
 class language
 {
-	function read($str)
+	function read($string)
 	{
-	
+		$html = "
+		<div align='center'>
+				<table border='1'>
+					<tr>
+						<td>Error</td>
+					</tr>
+					<tr>
+						<td>{$string}</td>
+				</tr>
+				</table>
+			</div>
+		";
+		echo $html;
 	}
 	
 	function edit()
